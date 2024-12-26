@@ -1,15 +1,12 @@
 "use client";
-import dynamic from "next/dynamic";
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css/pagination";
+import Image from "next/image";
 import { Box, Typography } from "@mui/material";
 import MyCard from "./MyCard";
-
-// Dynamically import Swiper components
-const Swiper = dynamic(() => import("swiper/react").then((mod) => mod.Swiper), { ssr: false });
-const SwiperSlide = dynamic(() => import("swiper/react").then((mod) => mod.SwiperSlide), { ssr: false });
 
 const MyCategoryLogic = ({
   imgUrls,
@@ -21,21 +18,22 @@ const MyCategoryLogic = ({
   return (
     <Swiper
       onSwiper={(swiper) => {
-        swiperRef.current = swiper;
+        swiperRef.current = swiper; // Set swiper instance to the ref
       }}
       onSlideChange={(swiper) => {
+        // Update states based on swiper's position
         setIsBeginning(swiper.isBeginning);
         setIsEnd(swiper.isEnd);
       }}
       pagination={{ clickable: true }}
-      autoplay={{
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      }}
+      //   autoplay={{
+      //     delay: 3000,
+      //     disableOnInteraction: false,
+      //     pauseOnMouseEnter: true,
+      //   }} // Enables autoplay
       modules={[Pagination, Autoplay]}
       spaceBetween={20}
-      lazy={true}
+      lazy="true"
       breakpoints={{
         200: { slidesPerView: 1 },
         600: { slidesPerView: 2 },
