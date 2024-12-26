@@ -1,0 +1,41 @@
+{
+  "name": "siwa-garden-front",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "export": "next build && next export",
+    "start": "NODE_ENV=production node server.js",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.2.1",
+    "@mui/material": "^6.2.1",
+    "@mui/styled-engine-sc": "^6.2.1",
+    "@mui/x-data-grid": "^7.23.3",
+    "@next/bundle-analyzer": "^15.1.2",
+    "@reduxjs/toolkit": "^2.5.0",
+    "axios": "^1.7.9",
+    "cookies-next": "^5.0.2",
+    "js-cookie": "^3.0.5",
+    "next": "15.1.2",
+    "react": "^19.0.0",
+    "react-axios": "^2.0.6",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "react-loader-spinner": "^6.1.6",
+    "react-redux": "^9.2.0",
+    "react-spinners": "^0.15.0",
+    "react-toastify": "^11.0.2",
+    "styled-components": "^6.1.13",
+    "swiper": "^11.1.15"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.2"
+  }
+}
