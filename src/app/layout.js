@@ -4,6 +4,7 @@ import MyFooter from "./Utils/MyFooter";
 import Navbars from "./Utils/Navbars";
 import { DrawerProvider } from "./Utils/DrawerContext";
 import MiniDrawer from "./Utils/DrawerPatient/MyDrawer";
+import MtThemes from "./Utils/MtThemes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,12 +25,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <DrawerProvider>
-          <Navbars/>
-          <MiniDrawer/>
+        <MtThemes>
+          <DrawerProvider>
+            <Navbars />
+            <MiniDrawer />
             {children}
-          <MyFooter/>
-        </DrawerProvider>
+            <MyFooter />
+          </DrawerProvider>
+        </MtThemes>
       </body>
     </html>
   );

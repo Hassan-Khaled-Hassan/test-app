@@ -20,6 +20,7 @@ import { drawerWidth } from "./Roles";
 import { useDrawer } from "./DrawerContext";
 import useNavHook from "./useNavHook";
 import { usePathname } from "next/navigation"; 
+import { useMediaQuery } from "@mui/material";
 const CssTextField = styled(TextField)(({ theme }) => ({
   "& label": {
     color: "#B5B5B5",
@@ -61,14 +62,15 @@ const pages = [
 ];
 
 export default function PrimarySearchAppBar() {
-  const {
-    screenWidth,
-  } = useNavHook();
-
   const { openDrawer, isDrawerOpen } = useDrawer();
   // console.log(screenWidth)
   const theme = useTheme();
+  const isSmallMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("mmd"));
+  const isSmall = useMediaQuery(theme.breakpoints.down("msm"));
+  const isBig = useMediaQuery(theme.breakpoints.down("lg"));
   const pathname = usePathname();
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -84,7 +86,7 @@ export default function PrimarySearchAppBar() {
           }),
           ...(isDrawerOpen && {
             marginLeft: drawerWidth,
-            width: screenWidth > 600 ? "100%" : "100%",
+            width: "100%",
             transition: theme.transitions.create(["width", "margin"], {
               easing: theme.transitions.easing.sharp,
               duration: theme.transitions.duration.enteringScreen,
@@ -102,12 +104,7 @@ export default function PrimarySearchAppBar() {
             <Link
               href="/"
               style={{
-                maxWidth:
-                  screenWidth > 992 || screenWidth === undefined
-                    ? "196px"
-                    : screenWidth > 768
-                    ? "150px"
-                    : "120px",
+                maxWidth: !isMobile ? "196px" : !isSmall ? "150px" : "120px",
               }}
             >
               <Image
@@ -128,8 +125,8 @@ export default function PrimarySearchAppBar() {
             <Box
               sx={{
                 flexGrow: 1,
-                display: screenWidth <= 992 ? "none" : "flex",
-                ml: screenWidth >= 1100 ? 4 : screenWidth >= 992 ? 1 : "auto",
+                display: isMobile ? "none" : "flex",
+                ml: !isBig ? 4 : !isMobile ? 1 : "auto",
                 mt: "49px",
               }}
             >
@@ -143,7 +140,7 @@ export default function PrimarySearchAppBar() {
                     // onClick={handleCloseNavMenu}
                     sx={{
                       my: 2,
-                      color:  pathname === page.to ?   "#8B4513":"#92929D",
+                      color: pathname === page.to ? "#8B4513" : "#92929D",
                       display: "block",
                       transition: "color 0.6s ease",
                       textTransform: "capitalize",
@@ -169,7 +166,7 @@ export default function PrimarySearchAppBar() {
             <Box
               sx={{
                 maxWidth: "200px",
-                mt: screenWidth >= 992 ? "46px" : "0px",
+                mt: !isMobile ? "46px" : "0px",
               }}
             >
               <CssTextField
@@ -205,7 +202,7 @@ export default function PrimarySearchAppBar() {
                 }}
               />
             </Box>
-            {screenWidth > 992 || screenWidth === undefined ? null : (
+            {!isMobile ? null : (
               <IconButton
                 size="large"
                 edge="start"
@@ -213,7 +210,7 @@ export default function PrimarySearchAppBar() {
                 aria-label="open drawer"
                 sx={{
                   mr: 1,
-                  marginLeft: screenWidth < 730 && screenWidth > 600 ? 0 : 1,
+                  marginLeft: isSmall && !isSmallMobile ? 0 : 1,
                   fontSize: "30px",
                   // display: screenWidth <= 992 ? "block" : "none",
                   // ...(isDrawerOpen && { display: "none" }),
