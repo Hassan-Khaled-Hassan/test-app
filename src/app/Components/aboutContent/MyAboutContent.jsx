@@ -4,10 +4,20 @@ import React from "react";
 import SignInCard from "./SignInCard";
 import Image from "next/image";
 import MyHeaderTwo from "@/app/Utils/MyHeaderTwo";
-const MySignUp = () => {
+const MyAboutContent = () => {
   return (
     <Box sx={{ mt: 6 }}>
-      <MyHeaderTwo part1="Success" name=" Stories" link="/" />
+      <Box sx={{ width: { xs: "96%", md: "85%" }, m: "auto" }}>
+        <MyHeaderTwo
+          part1="About"
+          name=" Us"
+          link="/"
+          paragraphs={[
+            "Nile Garden is a company deeply rooted in the traditions of Mediterranean cuisine, with a mission to bring the rich and savory flavors of this region to tables worldwide. Our journey began with a simple yet profound goal: to craft pickled products that not only taste delicious but also embody the essence of authentic Mediterranean pickling methods. Over the years, we have dedicated ourselves to perfecting our recipes and refining our techniques, ensuring that every product we offer meets the highest standards of quality and taste.",
+            "Our team comprises skilled artisans and food experts who share a common passion for excellence in every jar we produce. At Nile Garden, we believe that the best pickles start with the best ingredients. This is why we meticulously select the freshest olives, cucumbers, peppers, carrots, and other vegetables, sourced from trusted farmers who adhere to sustainable and ethical farming practices. Our commitment to quality begins in the fields and extends through every step of our production process.",
+          ]}
+        />
+      </Box>
       <Container
         id="SignUp"
         maxWidth="xl"
@@ -26,9 +36,11 @@ const MySignUp = () => {
           width: "100%",
           m: 0,
           mt: 6,
+          mb: 6,
+
           // borderTop: "1px solid",
           // borderColor: "divider",
-          bgcolor: "#4CAF50",
+          bgcolor: "transparent",
         }}
       >
         <Stack
@@ -70,11 +82,10 @@ const MySignUp = () => {
               width: "100%",
             }}
           >
-            <SignInCard />
             <Box
               sx={{
                 display: { xs: "flex", md: "flex" },
-                width: { xs: "100%", md: "50%" },
+                width: { xs: "100%", md: "100%" },
                 height: { xs: "600px", md: "auto" },
                 maxHeight: "800px",
               }}
@@ -84,7 +95,7 @@ const MySignUp = () => {
                 width={568}
                 height={466}
                 alt="Description"
-                style={{ width: "100%", height: "100%" }}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </Box>
           </Stack>
@@ -94,4 +105,4 @@ const MySignUp = () => {
   );
 };
 
-export default MySignUp;
+export default MyAboutContent;

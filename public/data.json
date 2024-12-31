@@ -1,0 +1,47 @@
+{
+  "product": { "name": "Product Name", "description": "Product Description" },
+  "aboutContent": { "title": "About Us", "content": "About content here" },
+  "value": { "mission": "Our mission", "vision": "Our vision" },
+  "certificate": { "count": 5, "details": ["Cert 1", "Cert 2"] },
+  "clients": [{ "name": "Client A" }, { "name": "Client B" }],
+  "aboutList": [
+    { 
+      "name": "About",
+      "Part" : " Us"  ,
+      "description": "Product Description",
+       "paragraphs":
+       [
+          "Nile Garden is a company deeply rooted in the traditions of Mediterranean cuisine, with a mission to bring the rich and savory flavors of this region to tables worldwide. Our journey began with a simple yet profound goal: to craft pickled products that not only taste delicious but also embody the essence of authentic Mediterranean pickling methods. Over the years, we have dedicated ourselves to perfecting our recipes and refining our techniques, ensuring that every product we offer meets the highest standards of quality and taste.",
+          "Our team comprises skilled artisans and food experts who share a common passion for excellence in every jar we produce. At Nile Garden, we believe that the best pickles start with the best ingredients. This is why we meticulously select the freshest olives, cucumbers, peppers, carrots, and other vegetables, sourced from trusted farmers who adhere to sustainable and ethical farming practices. Our commitment to quality begins in the fields and extends through every step of our production process."
+       ]
+    },
+     {
+       "name": "Our Vision and",
+       "Part": " Our Mission",
+       "description": "Product Description",
+       "paragraphs": [
+         "Our Vision: Is to deliver a simple combination between serving fresh, healthy and tasty products of Quality packaged food in Egypt & International Markets",
+         "Our Mission: Is to make our food products the best favorable choice of families within our target profile. leveraging our expertise and resources with uncompromising dedication to efficiency, innovation, quality and service."
+       ]
+     },
+      {
+        "name": "our",
+        "Part": " History",
+        "description": "Product Description",
+        "paragraphs": [
+          "Nile Garden for Food industries was founded in 2014 in its ongoing efforts to become the regional benchmark of the food industry."
+        ]
+      },
+      {
+        "name": "our",
+        "Part": " Goals",
+        "description": "Product Description",
+        "paragraphs": [
+          "To be the leading product of olive oil and olive  regionally in retail and the most preferred product worldwide in food service.",
+          "Increasing production capacity by buying more firms ,creating more factories and Relying on renewable energy in farms and factories and recycling industrial waste.",
+          "Establish more Products lines, with various range of healthy and distinguished products, that has no competitors when it comes to quality and taste."
+
+        ]
+      }
+  ]
+}

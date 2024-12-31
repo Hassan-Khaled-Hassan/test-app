@@ -83,10 +83,16 @@ export default function MyFooter() {
                 </IconButton>
                 Siwa Garden
               </Box>
-              <Typography variant="body2" sx={{ color: "#F4F6FA", mb: 2 }}>
+              <Typography
+                variant="body2"
+                sx={{ color: "#F4F6FA", mb: 2, textAlign: "justify" }}
+              >
                 Subscribe for weekly updates. No spams ever!
               </Typography>
-              <InputLabel htmlFor="email-newsletter" sx={{ color: "#F4F6FA" }}>
+              <InputLabel
+                htmlFor="email-newsletter"
+                sx={{ color: "#F4F6FA", textAlign: "justify" }}
+              >
                 Email
               </InputLabel>
               <Stack direction="row" spacing={1} useFlexGap>
@@ -141,7 +147,7 @@ export default function MyFooter() {
                 >
                   <EmailIcon sx={{ color: "#FFD700" }} />
                 </IconButton>
-                Siwa_Garden@contact.com
+                mohamed.saleh@siwagarden.com
               </Box>
               <Box
                 variant="body2"
@@ -160,7 +166,7 @@ export default function MyFooter() {
                 >
                   <PhoneIcon sx={{ color: "#FFD700" }} />
                 </IconButton>
-                +201234567890 - +201234567891
+                +20 111 991 9899 - +20 111 441 2223
               </Box>
               <Box
                 variant="body2"

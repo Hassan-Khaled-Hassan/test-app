@@ -1,10 +1,9 @@
 import React from 'react'
 import Box from "@mui/material/Box";
-// import "./restDetails.css";
 import AllProducts from './AllProducts';
 
 
-const MyHomeProduct = () => {
+const MyHomeValue = () => {
   return (
     <Box
       sx={{
@@ -20,4 +19,4 @@ const MyHomeProduct = () => {
   );
 }
 
-export default MyHomeProduct;
+export default MyHomeValue;

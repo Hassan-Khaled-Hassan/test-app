@@ -69,7 +69,7 @@ const MyHeaderOne = ({
           }}
           aria-label={`Go to ${name}`}
         >
-          <span style={{ borderBottom: "4px solid #8B4513" }}>{part1}</span>
+          <span >{part1}</span>
           {name}
         </Box>
       </Link>

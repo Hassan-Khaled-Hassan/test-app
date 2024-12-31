@@ -128,6 +128,7 @@ export default function PrimarySearchAppBar() {
                 display: isMobile ? "none" : "flex",
                 ml: !isBig ? 4 : !isMobile ? 1 : "auto",
                 mt: "49px",
+                justifyContent: "center",
               }}
             >
               {pages.map((page) => (
@@ -161,6 +162,7 @@ export default function PrimarySearchAppBar() {
               sx={{
                 flexGrow: 1,
                 // border: "1.5px solid #8B4513"
+                display: isMobile ? "flex" : "none",
               }}
             />
             <Box

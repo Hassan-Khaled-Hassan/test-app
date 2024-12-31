@@ -39,7 +39,7 @@ export default function AllQuestions() {
         sx={{
           color: "#050430",
           width: { sm: "100%", md: "60%" },
-          textAlign: { sm: "left", md: "center" },
+          textAlign: { sm: "center", md: "center" },
           fontWeight: "bold",
           fontSize: "32px",
         }}

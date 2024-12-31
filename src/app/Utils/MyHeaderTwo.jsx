@@ -1,16 +1,14 @@
-import React from 'react'
-import { Box, IconButton } from "@mui/material";
-import Link from "next/link";
-const MyHeaderTwo = ({ part1, name, link }) => {
+import React from "react";
+import { Box, Typography } from "@mui/material";
+
+const MyHeaderTwo = ({ part1, name, link, paragraphs = [] }) => {
   return (
     <Box
       sx={{
         display: "flex",
-        flexDirection: { xs: "column", sm: "row" },
+        flexDirection: { xs: "column", sm: "column" },
         justifyContent: "center",
         alignItems: "center",
-        // width: { xs: "99%", md: "96%" },
-        // margin: "10px auto",
         maxWidth: "95%",
         margin: "auto",
         mb: "30px",
@@ -21,14 +19,35 @@ const MyHeaderTwo = ({ part1, name, link }) => {
           mt: "15px",
           fontSize: "40px",
           fontWeight: "bold",
-          color: "#FFD700",
+          color: "#050430",
         }}
       >
-        <span style={{ borderBottom: "4px solid #8B4513" }}>{part1}</span>
+        <span>{part1}</span>
         {name}
       </Box>
+      {paragraphs.length > 0 &&
+        paragraphs.map((paragraph, index) => (
+          <Typography
+            key={index}
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{
+              display: "flex",
+              WebkitLineClamp: 1,
+              WebkitBoxOrient: "vertical",
+              flexWrap: "wrap",
+              fontSize: "20px",
+              textAlign: "center",
+              color: "black",
+              mt: 2,
+            }}
+          >
+            {paragraph}
+          </Typography>
+        ))}
     </Box>
   );
 };
 
-export default MyHeaderTwo
+export default MyHeaderTwo;

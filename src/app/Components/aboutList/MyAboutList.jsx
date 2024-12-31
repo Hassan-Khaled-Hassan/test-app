@@ -1,13 +1,27 @@
 "use client";
-import { Box, Container, Stack } from "@mui/material";
+import {
+  Box,
+  Container,
+  Stack,
+} from "@mui/material";
 import React from "react";
 import SignInCard from "./SignInCard";
 import Image from "next/image";
 import MyHeaderTwo from "@/app/Utils/MyHeaderTwo";
-const MySignUp = () => {
+const MyAboutList = () => {
   return (
     <Box sx={{ mt: 6 }}>
-      <MyHeaderTwo part1="Success" name=" Stories" link="/" />
+      <Box sx={{ width: { xs: "96%", md: "85%" }, m: "auto" }}>
+        <MyHeaderTwo
+          part1="Our Vision"
+          name="Our Mission"
+          link="/"
+          paragraphs={[
+            "Our Vision: Is to deliver a simple combination between serving fresh, healthy and tasty products of Quality packaged food in Egypt & International Markets",
+            "Our Mission: Is to make our food products the best favorable choice of families within our target profile. leveraging our expertise and resources with uncompromising dedication to efficiency, innovation, quality and service.",
+          ]}
+        />
+      </Box>
       <Container
         id="SignUp"
         maxWidth="xl"
@@ -26,9 +40,11 @@ const MySignUp = () => {
           width: "100%",
           m: 0,
           mt: 6,
+          mb: 6,
+
           // borderTop: "1px solid",
           // borderColor: "divider",
-          bgcolor: "#4CAF50",
+          bgcolor: "transparent",
         }}
       >
         <Stack
@@ -70,11 +86,10 @@ const MySignUp = () => {
               width: "100%",
             }}
           >
-            <SignInCard />
             <Box
               sx={{
                 display: { xs: "flex", md: "flex" },
-                width: { xs: "100%", md: "50%" },
+                width: { xs: "100%", md: "100%" },
                 height: { xs: "600px", md: "auto" },
                 maxHeight: "800px",
               }}
@@ -84,7 +99,7 @@ const MySignUp = () => {
                 width={568}
                 height={466}
                 alt="Description"
-                style={{ width: "100%", height: "100%" }}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </Box>
           </Stack>
@@ -94,4 +109,4 @@ const MySignUp = () => {
   );
 };
 
-export default MySignUp;
+export default MyAboutList;

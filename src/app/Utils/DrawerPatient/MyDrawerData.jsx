@@ -26,6 +26,7 @@ import ContactPageIcon from '@mui/icons-material/ContactPage';
 import ArticleIcon from '@mui/icons-material/Article';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import InventoryIcon from '@mui/icons-material/Inventory';
+import { useMediaQuery } from "@mui/material";
 var array1 = [
   { id: 1, name: "Home", link: "/", icon: <HomeIcon /> },
   { id: 2, name: "About", link: "/About-Us", icon: <InfoIcon /> },
@@ -50,6 +51,7 @@ const MyDrawerData = () => {
     handleItemClick
   ] = MyDrawerlogic();
 const pathname = usePathname();
+const isMobile = useMediaQuery(theme.breakpoints.down("mmd"));
   return (
     <div>
       <Drawer
@@ -59,8 +61,8 @@ const pathname = usePathname();
         onClose={closeDrawer}
         ModalProps={{ keepMounted: true }} // Ensures that the drawer stays mounted when closed for swipe to work
         sx={{
-          display: { xs: "block", md: "none" },
-          width: "42%",
+          display: isMobile ? "block" : "none",
+          width: "280px",
           flexShrink: 0,
           ...(isDrawerOpen && {
             ...openedMixin(theme),
@@ -71,7 +73,7 @@ const pathname = usePathname();
             "& .MuiDrawer-paper": closedMixin(theme),
           }),
           "& .MuiDrawer-paper": {
-            width: "42%",
+            width: "280px",
             backgroundColor: theme.palette.background.paper,
             borderLeft: "7px solid #8B4513", // Optional: Removes the left border for right-side drawers
             transition: "transform 0.3s ease",

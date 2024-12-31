@@ -45,7 +45,7 @@ export default function LogoCollection({ name , part1 }) {
           textAlign: "center",
         }}
       >
-        <span style={{ borderBottom: "4px solid #8B4513" }}>{part1}</span>
+        <span>{part1}</span>
         {name}
       </Box>
       <Grid container sx={{ justifyContent: "center", mt: 0.5, opacity: 0.6 }}>
