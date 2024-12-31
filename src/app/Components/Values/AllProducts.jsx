@@ -60,7 +60,7 @@ const logoStyle = {
   opacity: 0.3,
 };
 
-export default function AllProducts() {
+export default function AllProducts({data}) {
   const theme = useTheme();
   const logos = theme.palette.mode === "light" ? darkLogos : whiteLogos;
 
@@ -87,7 +87,7 @@ export default function AllProducts() {
         ]}
       />
       <Grid container spacing={2} sx={{ width: "100%" }}>
-        {userTestimonials.map((item, index) => (
+        {data.map((item, index) => (
           <Grid
             size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
             key={index}
@@ -125,7 +125,7 @@ export default function AllProducts() {
                   <CardMedia
                     component="img"
                     height="140"
-                    image="/value.png"
+                    image={item.image}
                     alt="green iguana"
                     sx={{
                       width: "97px",

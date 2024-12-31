@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import AllProducts from './AllProducts';
 
 
-const MyHomeValue = () => {
+const MyHomeValue = ({ data }) => {
   return (
     <Box
       sx={{
@@ -14,9 +14,9 @@ const MyHomeValue = () => {
         // borderRadius: "40px",
       }}
     >
-      <AllProducts />
+      <AllProducts data={data} />
     </Box>
   );
-}
+};
 
 export default MyHomeValue;

@@ -8,18 +8,15 @@ import React from "react";
 import SignInCard from "./SignInCard";
 import Image from "next/image";
 import MyHeaderTwo from "@/app/Utils/MyHeaderTwo";
-const MyAboutList = () => {
+const MyAboutList = ({data}) => {
   return (
     <Box sx={{ mt: 6 }}>
       <Box sx={{ width: { xs: "96%", md: "85%" }, m: "auto" }}>
         <MyHeaderTwo
-          part1="Our Vision"
-          name="Our Mission"
+          part1={data.name}
+          name={data.Part}
           link="/"
-          paragraphs={[
-            "Our Vision: Is to deliver a simple combination between serving fresh, healthy and tasty products of Quality packaged food in Egypt & International Markets",
-            "Our Mission: Is to make our food products the best favorable choice of families within our target profile. leveraging our expertise and resources with uncompromising dedication to efficiency, innovation, quality and service.",
-          ]}
+          paragraphs={data.paragraphs}
         />
       </Box>
       <Container
@@ -95,7 +92,7 @@ const MyAboutList = () => {
               }}
             >
               <Image
-                src="https://res.cloudinary.com/dyunrntg7/image/upload/v1735564848/pexels-photo-6231906_qrnuxl.jpg"
+                src={data.image}
                 width={568}
                 height={466}
                 alt="Description"

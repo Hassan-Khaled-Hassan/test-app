@@ -4,18 +4,15 @@ import React from "react";
 import SignInCard from "./SignInCard";
 import Image from "next/image";
 import MyHeaderTwo from "@/app/Utils/MyHeaderTwo";
-const MyAboutContent = () => {
+const MyAboutContent = ({data}) => {
   return (
     <Box sx={{ mt: 6 }}>
       <Box sx={{ width: { xs: "96%", md: "85%" }, m: "auto" }}>
         <MyHeaderTwo
-          part1="About"
-          name=" Us"
+          part1={data.name}
+          name={data.Part}
           link="/"
-          paragraphs={[
-            "Nile Garden is a company deeply rooted in the traditions of Mediterranean cuisine, with a mission to bring the rich and savory flavors of this region to tables worldwide. Our journey began with a simple yet profound goal: to craft pickled products that not only taste delicious but also embody the essence of authentic Mediterranean pickling methods. Over the years, we have dedicated ourselves to perfecting our recipes and refining our techniques, ensuring that every product we offer meets the highest standards of quality and taste.",
-            "Our team comprises skilled artisans and food experts who share a common passion for excellence in every jar we produce. At Nile Garden, we believe that the best pickles start with the best ingredients. This is why we meticulously select the freshest olives, cucumbers, peppers, carrots, and other vegetables, sourced from trusted farmers who adhere to sustainable and ethical farming practices. Our commitment to quality begins in the fields and extends through every step of our production process.",
-          ]}
+          paragraphs={data.paragraphs}
         />
       </Box>
       <Container
@@ -91,7 +88,7 @@ const MyAboutContent = () => {
               }}
             >
               <Image
-                src="https://res.cloudinary.com/dyunrntg7/image/upload/v1735564848/pexels-photo-6231906_qrnuxl.jpg"
+                src={data.image}
                 width={568}
                 height={466}
                 alt="Description"
