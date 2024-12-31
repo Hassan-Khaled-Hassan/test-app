@@ -20,7 +20,7 @@ export default async function Page() {
 
   return (
     <div>
-      <MyHomeProduct data={data} />
+      <MyHomeProduct  />
       <MyAboutContent data={data.aboutList?.[0] || {}} />
       {data.aboutList?.length > 1 ? (
         data.aboutList

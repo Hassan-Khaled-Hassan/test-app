@@ -1,9 +1,4 @@
 {
-  "product": { "name": "Product Name", "description": "Product Description" },
-  "aboutContent": { "title": "About Us", "content": "About content here" },
-  "value": { "mission": "Our mission", "vision": "Our vision" },
-  "certificate": { "count": 5, "details": ["Cert 1", "Cert 2"] },
-  "clients": [{ "name": "Client A" }, { "name": "Client B" }],
   "aboutList": [
     {
       "name": "About",

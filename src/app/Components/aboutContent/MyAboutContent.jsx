@@ -5,6 +5,7 @@ import SignInCard from "./SignInCard";
 import Image from "next/image";
 import MyHeaderTwo from "@/app/Utils/MyHeaderTwo";
 const MyAboutContent = ({data}) => {
+  console.log(data);
   return (
     <Box sx={{ mt: 6 }}>
       <Box sx={{ width: { xs: "96%", md: "85%" }, m: "auto" }}>
@@ -88,7 +89,7 @@ const MyAboutContent = ({data}) => {
               }}
             >
               <Image
-                src={data.image}
+                src={`${data.image}`}
                 width={568}
                 height={466}
                 alt="Description"
