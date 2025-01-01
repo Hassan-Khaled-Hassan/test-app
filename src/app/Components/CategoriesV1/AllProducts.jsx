@@ -1,17 +1,10 @@
 'use client'
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardContent from "@mui/material/CardContent";
-import Avatar from "@mui/material/Avatar";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid2";
 import { useTheme } from "@mui/system";
-import CardMedia from '@mui/material/CardMedia';
-import CardActionArea from '@mui/material/CardActionArea';
 import MyHeaderTwo from "@/app/Utils/MyHeaderTwo";
+import SearchIcon from "@mui/icons-material/Search";
+import { Box, Paper, Typography, Button, Avatar , Container } from "@mui/material";
 const userTestimonials = [
   {
     avatar: <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />,
@@ -143,7 +136,7 @@ export default function AllProducts() {
   return (
     <Container
       id="testimonials"
-      //   maxWidth="xl"
+      maxWidth="lg"
       sx={{
         pt: { xs: 4, sm: 12 },
         pb: { xs: 8, sm: 16 },
@@ -158,62 +151,92 @@ export default function AllProducts() {
       <Grid container spacing={2}>
         {userTestimonials.map((testimonial, index) => (
           <Grid
-            size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
+            size={{ xs: 12, sm: 6, md: 4, lg: 4 }}
             key={index}
             sx={{ display: "flex", justifyContent: "center" }}
           >
-            <Card
+            <Paper
+              component="div"
+              // maxWidth="sm"
               sx={{
-                maxWidth: { xs: "100%", sm: 345 },
-                borderRadius: "30px",
-                boxShadow: "none",
+                backgroundColor: "#0E83AF",
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dsccvadus/image/upload/v1735741507/tpyxfudbhxnx3pzprti3.jpg')",
+                backgroundSize: "cover",
+                borderRadius: "10px",
+                filter: "brightness(0.8)",
+                p: "110px 32px",
+                margin: "auto",
+                maxWidth: "460px",
+                cursor: "pointer",
+                transition:
+                  "transform 0.3s ease, filter 0.3s ease , box-shadow 0.3s ease",
+                "&:hover": {
+                  transform: "scale(0.9)",
+                  filter: "brightness(0.9)",
+                  boxShadow: "0 20px 20px rgba(0, 0, 0, 0.2)",
+                },
               }}
+              bgcolor="primary.light"
             >
-              <CardActionArea>
+              <Box
+                sx={{
+                  marginTop: 3,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "20px",
+                }}
+              >
                 <Box
                   sx={{
-                    width: "90%",
-                    backgroundColor: "transparent",
-                    borderRadius: "15px",
-                    p: "34px 10px",
-                    m: "auto",
+                    marginTop: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
                   }}
                 >
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image="https://res.cloudinary.com/dyunrntg7/image/upload/v1735150709/Product_vl69rm.png"
-                    alt="green iguana"
-                    sx={{
-                      width: "100%",
-                      margin: " auto",
-                      objectFit: "cover",
-                      height: "242px",
-                      // width : "253px",
-                    }}
-                  />
-                </Box>
-                <CardContent>
                   <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
+                    component="h1"
+                    variant="h4"
                     sx={{
-                      display: "-webkit-box",
-                      WebkitLineClamp: 1, // Limit to one line
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis", // Add ellipsis for overflow
-                      fontSize: "16px",
                       textAlign: "center",
-                      color: "#050430",
+                      fontWeight: "bold",
+                      color: "white",
+                      fontSize : "21px"
                     }}
                   >
-                    MIXED PICKLES GREEK STYLE GIARDINERA
+                    GIARDINERA GREEK STYLE MIXED PICKLES
                   </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
+                </Box>
+                <Box
+                  sx={{
+                    marginTop: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    sx={{
+                      borderRadius: "6px",
+                      p: ["10px 22px", "10px 30px"], // Responsive padding values for mobile and larger screens
+                      background: "#4CAF50",
+                      color: "white",
+                      fontWeight : "bold",
+                      // boxShadow:
+                      //   "6px -2px 30px 1px #CF77F3, -13px 7px 50px 1px #009BFF",
+                      width: "230px",
+                      fontSize: "20px",
+                      textTransform: "capitalize",
+                    }}
+                    startIcon={<SearchIcon />}
+                  >
+                    Show Products
+                  </Button>
+                </Box>
+              </Box>
+            </Paper>
           </Grid>
         ))}
       </Grid>

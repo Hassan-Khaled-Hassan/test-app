@@ -17,7 +17,7 @@ const MyHeaderTwo = ({ part1, name, link, paragraphs = [] }) => {
       <Box
         sx={{
           mt: "15px",
-          fontSize: "40px",
+          fontSize: {xs : "25px" , sm :"40px"},
           fontWeight: "bold",
           color: "#050430",
         }}

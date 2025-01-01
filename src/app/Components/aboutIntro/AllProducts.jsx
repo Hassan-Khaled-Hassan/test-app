@@ -8,7 +8,9 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import { Box } from "@mui/material";
 
-export default function AllProducts() {
+export default function AllProducts({ name , ...links}) {
+  const breadcrumbItems = Object.values(links);
+  console.log(breadcrumbItems);
   const theme = useTheme();
   return (
     <Container
@@ -46,7 +48,7 @@ export default function AllProducts() {
             color: "#4CAF50",
           }}
         >
-          About
+          {name}
         </Box>
       </Box>
       <Box>
@@ -54,19 +56,25 @@ export default function AllProducts() {
           aria-label="breadcrumb"
           sx={{ color: "white", fontSize: { xs: "14px", sm: "25px" } }}
         >
-          <Link
-            underline="hover"
-            color="white"
-            href="/"
-            sx={{ color: "white", fontSize: { xs: "14px", sm: "25px" } }}
-          >
-            Home
-          </Link>
-          <Typography
-            sx={{ color: "#FFD700", fontSize: { xs: "14px", sm: "25px" } }}
-          >
-            Breadcrumbs
-          </Typography>
+          {breadcrumbItems.map((link, index) =>
+            link.href ? (
+              <Link
+                key={index}
+                underline="hover"
+                href={link.href}
+                sx={{ color: "white", fontSize: { xs: "14px", sm: "25px" } }}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <Typography
+                key={index}
+                sx={{ color: "#FFD700", fontSize: { xs: "14px", sm: "25px" } }}
+              >
+                {link.label}
+              </Typography>
+            )
+          )}
         </Breadcrumbs>
       </Box>
     </Container>

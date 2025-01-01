@@ -8,7 +8,7 @@ const MyHomeClients = () => {
   return (
     <Box
       sx={{
-        mb: 4,
+        mb: 0,
         // mt: "-96px",
         position: "relative",
         bgcolor: "rgb(228 192 94)",

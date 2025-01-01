@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import AllProducts from './AllProducts';
 
 
-const MyHomeProduct = () => {
+const MyHomeProductAll = () => {
   return (
     <Box
       sx={{
@@ -20,4 +20,4 @@ const MyHomeProduct = () => {
   );
 }
 
-export default MyHomeProduct;
+export default MyHomeProductAll;

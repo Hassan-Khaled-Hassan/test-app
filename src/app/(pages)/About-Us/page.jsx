@@ -20,7 +20,11 @@ export default async function Page() {
 
   return (
     <div>
-      <MyHomeProduct  />
+      <MyHomeProduct
+        home={{ label: "Home", href: "/" }}
+        electronics={{ label: "About US" }}
+        name={"About"}
+      />
       <MyAboutContent data={data.aboutList?.[0] || {}} />
       {data.aboutList?.length > 1 ? (
         data.aboutList
