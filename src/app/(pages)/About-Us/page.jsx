@@ -14,7 +14,6 @@ export default async function Page() {
     // Fetch data using Axios
     const response = await axios.get("https://siwagarden.com/data.json");
     data = response.data || { aboutList: [], Values: [] };
-    console.log(data)
   } catch (error) {
     console.error("Error fetching data:", error.message);
   }
