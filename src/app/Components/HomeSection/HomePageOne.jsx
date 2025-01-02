@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 
-const HomePageOne = () => {
+const HomePageOne = ({homeData}) => {
   return (
     <Box
       sx={{
@@ -21,7 +21,7 @@ const HomePageOne = () => {
         }}
       >
         <iframe
-          src="https://www.youtube.com/embed/WHqA4S1I2ow?rel=0&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&playlist=WHqA4S1I2ow"
+          src={`${homeData.link}`}
           title="YouTube video player"
           frameBorder="0"
           allow="autoplay; encrypted-media"
