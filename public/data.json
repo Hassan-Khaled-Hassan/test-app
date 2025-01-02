@@ -54,5 +54,11 @@
       "name": "Sustainability",
       "image": "https://res.cloudinary.com/dsccvadus/image/upload/v1735665416/cu1vepbo4engit2l5c7e.png"
     }
-  ]
+  ],
+  "homeVedioSize" : {
+      "link": "https://www.youtube.com/embed/ls8zSMK_RIw?rel=0&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&playlist=ls8zSMK_RIw"
+    },
+    "homeVedioMobileSize" : {
+      "link": "https://www.youtube.com/embed/WHqA4S1I2ow?rel=0&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&playlist=WHqA4S1I2ow"
+    }
 }
