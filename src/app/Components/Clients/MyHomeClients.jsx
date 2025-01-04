@@ -11,12 +11,12 @@ const MyHomeClients = () => {
         mb: 0,
         // mt: "-96px",
         position: "relative",
-        bgcolor: "rgb(228 192 94)",
+        bgcolor: "#F5F5DC", //rgb(228 192 94)
         // borderRadius: "40px",
       }}
     >
-      <LogoCollection part1="Retail" name= " Clients"/>
-      <LogoCollection part1="Ecommerce" name= " Clients"/>
+      <LogoCollection part1="Retail" name=" Clients" />
+      <LogoCollection part1="Ecommerce" name=" Clients" />
     </Box>
   );
 }

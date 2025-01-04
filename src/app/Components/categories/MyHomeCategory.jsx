@@ -10,7 +10,7 @@ const MyHomeCategory = () => {
         pt: 4,
         pb: 2,
         position: "relative",
-        bgcolor: "#4CAF50",
+        bgcolor: "#F5F5DC",
         borderRadius: "0px",
       }}
     >

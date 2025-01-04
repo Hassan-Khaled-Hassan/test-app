@@ -5,6 +5,7 @@ import { useTheme } from "@mui/system";
 import MyHeaderTwo from "@/app/Utils/MyHeaderTwo";
 import SearchIcon from "@mui/icons-material/Search";
 import { Box, Paper, Typography, Button, Avatar , Container } from "@mui/material";
+import Link from "next/link";
 const userTestimonials = [
   {
     avatar: <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />,
@@ -155,88 +156,90 @@ export default function AllProducts() {
             key={index}
             sx={{ display: "flex", justifyContent: "center" }}
           >
-            <Paper
-              component="div"
-              // maxWidth="sm"
-              sx={{
-                backgroundColor: "#0E83AF",
-                backgroundImage:
-                  "url('https://res.cloudinary.com/dyunrntg7/image/upload/v1735150769/image_z9jvlv.png')",
-                backgroundSize: "cover",
-                borderRadius: "10px",
-                filter: "brightness(0.8)",
-                p: "110px 32px",
-                margin: "auto",
-                maxWidth: "460px",
-                cursor: "pointer",
-                transition:
-                  "transform 0.3s ease, filter 0.3s ease , box-shadow 0.3s ease",
-                "&:hover": {
-                  transform: "scale(0.9)",
-                  filter: "brightness(0.9)",
-                  boxShadow: "0 20px 20px rgba(0, 0, 0, 0.2)",
-                },
-              }}
-              bgcolor="primary.light"
-            >
-              <Box
+            <Link href="/Blogs/BlogDetails/12">
+              <Paper
+                component="div"
+                // maxWidth="sm"
                 sx={{
-                  marginTop: 3,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "20px",
+                  backgroundColor: "#0E83AF",
+                  backgroundImage:
+                    "url('https://res.cloudinary.com/dyunrntg7/image/upload/v1735150769/image_z9jvlv.png')",
+                  backgroundSize: "cover",
+                  borderRadius: "10px",
+                  filter: "brightness(0.8)",
+                  p: "110px 32px",
+                  margin: "auto",
+                  maxWidth: "460px",
+                  cursor: "pointer",
+                  transition:
+                    "transform 0.3s ease, filter 0.3s ease , box-shadow 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(0.9)",
+                    filter: "brightness(0.9)",
+                    boxShadow: "0 20px 20px rgba(0, 0, 0, 0.2)",
+                  },
                 }}
+                bgcolor="primary.light"
               >
                 <Box
                   sx={{
-                    marginTop: 0,
+                    marginTop: 3,
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "center",
+                    gap: "20px",
                   }}
                 >
-                  <Typography
-                    component="h1"
-                    variant="h4"
+                  <Box
                     sx={{
-                      textAlign: "center",
-                      fontWeight: "bold",
-                      color: "white",
-                      fontSize: "21px",
+                      marginTop: 0,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
                     }}
                   >
-                    GIARDINERA GREEK STYLE MIXED PICKLES
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    marginTop: 0,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                  }}
-                >
-                  <Button
-                    variant="contained"
+                    <Typography
+                      component="h1"
+                      variant="h4"
+                      sx={{
+                        textAlign: "center",
+                        fontWeight: "bold",
+                        color: "white",
+                        fontSize: "21px",
+                      }}
+                    >
+                      GIARDINERA GREEK STYLE MIXED PICKLES
+                    </Typography>
+                  </Box>
+                  <Box
                     sx={{
-                      borderRadius: "6px",
-                      p: ["10px 22px", "10px 30px"], // Responsive padding values for mobile and larger screens
-                      background: "#8B4513",
-                      color: "#FFD700",
-                      fontWeight: "bold",
-                      // boxShadow:
-                      //   "6px -2px 30px 1px #CF77F3, -13px 7px 50px 1px #009BFF",
-                      width: "230px",
-                      fontSize: "20px",
-                      textTransform: "capitalize",
+                      marginTop: 0,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
                     }}
-                    startIcon={<SearchIcon />}
                   >
-                    Read more
-                  </Button>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        borderRadius: "6px",
+                        p: ["10px 22px", "10px 30px"], // Responsive padding values for mobile and larger screens
+                        background: "#8B4513",
+                        color: "#FFD700",
+                        fontWeight: "bold",
+                        // boxShadow:
+                        //   "6px -2px 30px 1px #CF77F3, -13px 7px 50px 1px #009BFF",
+                        width: "230px",
+                        fontSize: "20px",
+                        textTransform: "capitalize",
+                      }}
+                      startIcon={<SearchIcon />}
+                    >
+                      Read more
+                    </Button>
+                  </Box>
                 </Box>
-              </Box>
-            </Paper>
+              </Paper>
+            </Link>
           </Grid>
         ))}
       </Grid>
