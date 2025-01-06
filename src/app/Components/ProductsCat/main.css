@@ -1,0 +1,14 @@
+.css-e1cgo6-MuiListItemText-root .css-rizt0-MuiTypography-root {
+    font-size: 22px !important;
+    font-weight: bold !important
+}
+
+.css-1suxfoh-MuiListItemText-root .css-rizt0-MuiTypography-root {
+    font-size: 20px !important;
+    font-weight: bold !important
+}
+
+.css-16mmgyz-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background-color: #4CAF50 !important;
+    color: white !important;
+}

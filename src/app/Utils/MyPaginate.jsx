@@ -7,9 +7,9 @@ const MyPaginate = () => {
   return (
     <Stack
       spacing={2}
-      sx={{ justifyContent: "center", alignItems: "center", my: 4 }}
+      sx={{ justifyContent: "center", alignItems: "center", my: 6 }}
     >
-      <Pagination count={10}  sx={{ color: "#4CAF50" }} />
+      <Pagination count={10} size="large" />
     </Stack>
   );
 };
