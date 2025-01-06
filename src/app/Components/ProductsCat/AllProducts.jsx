@@ -19,7 +19,7 @@ import {
   CardActionArea,
 } from "@mui/material";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
-import './main.css'
+import './main.css';
 import MyPaginate from "@/app/Utils/MyPaginate";
 
 
