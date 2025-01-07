@@ -63,7 +63,7 @@ const logoStyle = {
 export default function AllProducts({data}) {
   const theme = useTheme();
   const logos = theme.palette.mode === "light" ? darkLogos : whiteLogos;
-
+  // console.log(data);
   return (
     <Container
       id="testimonials"
