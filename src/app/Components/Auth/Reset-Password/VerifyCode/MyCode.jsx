@@ -73,7 +73,7 @@ const MyCode = () => {
               }}
             >
               <Image
-                src="/olive tree-bro.png"
+                src="https://res.cloudinary.com/dsccvadus/image/upload/v1738593708/jtifa5qerzszgannwvy1.png"
                 width={500}
                 height={500}
                 alt="Description"
