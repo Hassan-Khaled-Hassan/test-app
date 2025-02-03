@@ -8,22 +8,6 @@ import { useDrawer } from "@/app/Utils/DrawerContext";
 import MultiImageInput from "react-multiple-image-input";
 const MyFormContainer = ({part1 , name}) => {
   const { openDrawer, isDrawerOpenSecond } = useDrawer();
-   const [screenWidth, setScreenWidth] = useState(window.innerWidth); // Initialize with 0 or any default value
-
-   useEffect(() => {
-     // This will only run on the client
-     const handleResize = () => {
-       setScreenWidth(window.innerWidth);
-     };
-
-     // Set initial screen width
-     handleResize();
-
-     window.addEventListener("resize", handleResize);
-     return () => {
-       window.removeEventListener("resize", handleResize);
-     };
-   }, []);
   return (
     <Box
       sx={{
