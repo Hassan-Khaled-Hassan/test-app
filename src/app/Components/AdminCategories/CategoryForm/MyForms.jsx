@@ -12,7 +12,7 @@ import MultiImageInput from "react-multiple-image-input";
 import './main.css'
 const CssTextField = styled(TextField)({
   '& label.Mui-focused': {
-    color: '#9c27b0',
+    color: '#4CAF50',
   },
   '& .MuiInput-underline:after': {
     borderBottomColor: '#B2BAC2',
@@ -204,7 +204,7 @@ const MyForms = () => {
             sx={{
               padding: "11px 28px",
               borderRadius: "13px",
-              backgroundColor: "secondary.main",
+              backgroundColor: "#8B4513",
             }}
           >
             Create Category

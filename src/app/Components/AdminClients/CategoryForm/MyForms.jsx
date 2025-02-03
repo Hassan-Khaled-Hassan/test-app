@@ -171,7 +171,7 @@ const MyForms = ({response}) => {
             error={!!errors.Role}
           >
             <InputLabel id="demo-simple-select-helper-label">
-              Select Your Type
+              Select Your Client Type
             </InputLabel>
             <Controller
               name="Role"
@@ -185,7 +185,7 @@ const MyForms = ({response}) => {
                   {...field}
                   labelId="demo-simple-select-helper-label"
                   id="demo-simple-select-helper"
-                  label="Select Your Role"
+                  label="Select Your Client Type"
                   className="my-select"
                 >
                   <MenuItem value="">

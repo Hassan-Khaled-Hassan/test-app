@@ -23,7 +23,7 @@ import MultiImageInput from "react-multiple-image-input";
 import './main.css'
 const CssTextField = styled(TextField)({
   '& label.Mui-focused': {
-    color: '#9c27b0',
+    color: '#4CAF50',
   },
   '& .MuiInput-underline:after': {
     borderBottomColor: '#B2BAC2',
@@ -196,7 +196,7 @@ const MyForms = ({response , Types}) => {
                   {...field}
                   labelId="demo-simple-select-helper-label"
                   id="demo-simple-select-helper"
-                  label="Select Your Role"
+                  label="Select Your Client Type"
                   className="my-select"
                 >
                   <MenuItem value="">
