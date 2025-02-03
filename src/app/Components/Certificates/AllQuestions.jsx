@@ -31,7 +31,7 @@ export default function LogoCollection({ name , part1 , response }) {
       </Box>
       <Grid
         container
-        sx={{ justifyContent: "center", mt: { xs: 2, md: 4 }, opacity: 1 }}
+        sx={{ justifyContent: "center", mt: { xs: 2, md: 4 }, opacity: 1 , alignItems : "center" , flexDirection : {xs : "column" , sm : "row"} }}
       >
         {response.map((logo, index) => (
           <Grid item key={index}>
