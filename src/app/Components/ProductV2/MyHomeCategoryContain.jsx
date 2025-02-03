@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 import MyHeaderOne from "@/app/Utils/MyHeaderOne";
 import MyCategoryLogic from "./MyCategoryLogic";
 
-const MyHomeCategoryContain = () => {
+const MyHomeCategoryContain = ({response}) => {
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(true); // State for tracking if at the first slide
   const [isEnd, setIsEnd] = useState(false);
@@ -42,6 +42,7 @@ const MyHomeCategoryContain = () => {
           setIsBeginning={setIsBeginning}
           setIsEnd={setIsEnd}
           num={10}
+          response={response}
         />
       </Container>
     </Box>

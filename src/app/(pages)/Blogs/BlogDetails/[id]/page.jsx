@@ -6,13 +6,7 @@ const Page = ({ params }) => {
   const { id } = params;
   return (
     <div>
-      <MyHomeProduct
-        home={{ label: "Home", href: "/" }}
-        products={{ label: "Blogs", href: "/Blogs" }}
-        Categories={{ label: "Pickled black olives slices" }}
-        name={"Pickled black olives slices"}
-      />
-      <MyAboutContent/>
+      <MyAboutContent id={id}/>
     </div>
   );
 };

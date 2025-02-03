@@ -1,10 +1,15 @@
+'use server'
 import React from 'react'
 import Box from "@mui/material/Box";
 // import "./restDetails.css";
 import AllProducts from './AllProducts';
+import axios from "axios";
 
-
-const MyHomeBlogsAll = () => {
+const MyHomeBlogsAll = async() => {
+  const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Blog/Blogs`
+  );
+  // console.log(response.data.data);
   return (
     <Box
       sx={{
@@ -15,7 +20,7 @@ const MyHomeBlogsAll = () => {
         // borderRadius: "40px",
       }}
     >
-      <AllProducts />
+      <AllProducts  response={response.data.data}/>
     </Box>
   );
 }

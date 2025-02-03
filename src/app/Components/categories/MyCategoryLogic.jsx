@@ -14,6 +14,7 @@ const MyCategoryLogic = ({
   setIsBeginning,
   setIsEnd,
   num,
+  response
 }) => {
   return (
     <Swiper
@@ -41,10 +42,10 @@ const MyCategoryLogic = ({
       }}
       className="mySwiper"
     >
-      {imgUrls === true ? (
-        Array.from({ length: num }).map((_, index) => (
+      {response?.length > 0 ? (
+        response.map((item, index) => (
           <SwiperSlide key={index}>
-            <MyCard />
+            <MyCard item={item}/>
           </SwiperSlide>
         ))
       ) : (

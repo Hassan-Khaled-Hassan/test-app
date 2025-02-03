@@ -1,8 +1,16 @@
+"use server";
 import React from 'react'
 import Box from "@mui/material/Box";
 import "./restDetails.css";
 import MyHomeCategoryContain from './MyHomeCategoryContain';
-const MyHomeProducts = () => {
+import axios from "axios";
+import { getCookie, getCookies, hasCookie } from 'cookies-next/server';
+import { cookies } from 'next/headers';
+const MyHomeProducts = async () => {
+  const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Product/Products`
+  );
+  // console.log(response.data.data)
   return (
     <Box
       sx={{
@@ -14,7 +22,9 @@ const MyHomeProducts = () => {
         borderRadius: "0px",
       }}
     >
-      <MyHomeCategoryContain />
+      {response?.data?.data?.length > 0 ? (
+        <MyHomeCategoryContain response = {response.data.data}/>
+      ) : null}
     </Box>
   );
 }

@@ -55,7 +55,12 @@ const CssTextField = styled(TextField)(({ theme }) => ({
 const pages = [
   { id: 1, name: "Home", to: "/" },
   { id: 2, name: "About", to: "/About-Us" },
-  { id: 3, name: "Products", to: "/Products" },
+  { 
+    id: 3,
+     name: "Products",
+      // to: "/Products" 
+      to: "#" 
+  },
   { id: 4, name: "Success Stories", to: "/Stories" },
   { id: 5, name: "Blogs", to: "/Blogs" },
   { id: 6, name: "Contact Us", to: "/Contact-Us" },
@@ -108,7 +113,7 @@ export default function PrimarySearchAppBar() {
               }}
             >
               <Image
-                src="https://res.cloudinary.com/dyunrntg7/image/upload/v1735150770/Logo_v93bay.png"
+                src="https://res.cloudinary.com/dsccvadus/image/upload/v1737579464/siwa_logo-removebg-preview_lgwpwx.png"
                 width={400}
                 height={200}
                 style={{

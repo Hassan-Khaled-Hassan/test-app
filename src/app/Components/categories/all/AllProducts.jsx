@@ -130,7 +130,7 @@ const logoStyle = {
   opacity: 0.3,
 };
 
-export default function AllProducts() {
+export default function AllProducts({response}) {
   const theme = useTheme();
   const logos = theme.palette.mode === "light" ? darkLogos : whiteLogos;
 
@@ -150,20 +150,20 @@ export default function AllProducts() {
     >
       <MyHeaderTwo part1="Our" name=" Blogs" link="/" />
       <Grid container spacing={2}>
-        {userTestimonials.map((testimonial, index) => (
+        {response.map((testimonial, index) => (
           <Grid
             size={{ xs: 12, sm: 6, md: 4, lg: 4 }}
             key={index}
             sx={{ display: "flex", justifyContent: "center" }}
           >
-            <Link href="/Blogs/BlogDetails/12">
+            <Link href={`/Blogs/BlogDetails/${testimonial.id}`}>
               <Paper
                 component="div"
                 // maxWidth="sm"
                 sx={{
                   backgroundColor: "#0E83AF",
                   backgroundImage:
-                    "url('https://res.cloudinary.com/dyunrntg7/image/upload/v1735150769/image_z9jvlv.png')",
+                    `url('${testimonial.image.url}')`,
                   backgroundSize: "cover",
                   borderRadius: "10px",
                   filter: "brightness(0.8)",
@@ -207,7 +207,7 @@ export default function AllProducts() {
                         fontSize: "21px",
                       }}
                     >
-                      GIARDINERA GREEK STYLE MIXED PICKLES
+                      {testimonial.name}
                     </Typography>
                   </Box>
                   <Box

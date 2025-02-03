@@ -1,93 +1,157 @@
 'use client'
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import MuiCard from "@mui/material/Card";
-import FormControl from "@mui/material/FormControl";
-import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
-import Link from "next/link";
-import { styled } from "@mui/material/styles";
-import { IconButton, InputAdornment} from "@mui/material";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { PulseLoader } from "react-spinners";
-import GoogleIcon from '@mui/icons-material/Google';
-
-const Card = styled(MuiCard)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  alignSelf: "center",
-  width: "100%",
-  padding: theme.spacing(4),
-  gap: theme.spacing(2),
-  border : "0px",
-  backgroundColor : "transparent",
-  boxShadow:
-    "0px",
-  [theme.breakpoints.up("sm")]: {
-    width: "450px",
-  },
-  ...theme.applyStyles("dark", {
-    boxShadow:
-      "hsla(220, 30%, 5%, 0.5) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.08) 0px 15px 35px -5px",
-  }),
-}));
-export default function SignInCard() {
+import {  Container, Stack } from "@mui/material";
+import Image from "next/image";
+import MyHeaderTwo from "@/app/Utils/MyHeaderTwo";
+export default function SignInCard({response}) {
 
   return (
-    <Card
-      variant="outlined"
+    <Container
+      id="SignUp"
+      maxWidth="xl"
       sx={{
-        borderRadius: "15px",
-        width: { xs: "100%", md: "44% !important" },
+        pt: { xs: 1, sm: 0 },
+        pb: { xs: 1, sm: 0 },
+        position: "relative",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: { xs: 3, sm: "2px" },
+        flexGrow: 1,
+        paddingRight: "0px !important",
+        paddingLeft: "0px !important",
+        // width: "100%",
         m: "auto",
+        mt: 6,
+        mb: 15,
+
+        // borderTop: "1px solid",
+        // borderColor: "divider",
+        bgcolor: "white",
       }}
     >
-
-          <Typography
-        component="h1"
-        variant="h4"
-        sx={{ width: "100%", fontSize: "clamp(2rem, 10vw, 2.15rem)" , mb:4  , textTransform : "capitalize" , color : "white"}}
-      >
-        Learn more about the oil making process with out guides.
-      </Typography>
-
-      <Typography
-        component="h1"
-        variant="body1"
-        sx={{ width: "100%", color: "white" }}
-      >
-        Nile Garden’s factory, situated on the Alex Desert Road near Dina Farms,
-        boasts an advanced processing facility built to top food industry
-        standards. Featuring a cutting-edge laboratory for continuous innovation
-        and rigorous quality control, the factory has a current capacity of
-        10,000 tons of table olives, with plans to increase to 15,000 tons by
-        2025. This positions Nile Garden as a leading producer of olive oil and
-        canned foods, committed to high quality and professional service at
-        competitive costs.
-      </Typography>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Button
-          sx={{
-            borderRadius: "16px",
-            p: ["10px 22px", "10px 30px"],
-            background: "transparent",
-            color: "white",
-            border: "2px solid white",
-            width: "195px",
-            fontWeight: "bold",
-            transition : "all 0.6s",
-            ":hover": {
-              background: "#8B4513",
-              color : "white",
-              // border : "0px"
+      <Stack
+        direction="column"
+        component="main"
+        sx={[
+          {
+            justifyContent: "center",
+            height: "calc((1 - var(--template-frame-height, 0)) * 100%)",
+            marginTop: "0px",
+            minHeight: "100%",
+            width: "94%",
+          },
+          (theme) => ({
+            "&::before": {
+              content: '""',
+              display: "block",
+              position: "absolute",
+              zIndex: -1,
+              inset: 0,
+              backgroundImage:
+                "radial-gradient(ellipse at 50% 50%, hsl(210, 100%, 97%), hsl(0, 0%, 100%))",
+              backgroundRepeat: "no-repeat",
+              ...theme.applyStyles("dark", {
+                backgroundImage:
+                  "radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%))",
+              }),
             },
+          }),
+        ]}
+      >
+        <Stack
+          direction={{ xs: "column-reverse", md: "row" }}
+          sx={{
+            justifyContent: "center",
+            gap: { xs: 6, sm: 3 },
+            p: 0,
+            mx: "auto",
+            width: "100%",
           }}
-          type="submit"
         >
-          Read More
-        </Button>
-      </Box>
-    </Card>
+          <Box
+            sx={{
+              display: { xs: "flex", md: "flex" },
+              width: { xs: "100%", md: "100%" },
+              height: { xs: "350px", md: "550px" },
+              maxHeight: "800px",
+            }}
+          >
+            <Image
+              src={response.image.url}
+              width={568}
+              height={466}
+              alt="Description"
+              style={{
+                width: "100%",
+                height: "100%",
+                // objectFit: "cover",
+                borderRadius: "15px",
+              }}
+            />
+          </Box>
+        </Stack>
+        <Box
+          sx={{
+            m: "auto",
+            mt: "15px",
+            ml: { xs: "10px", sm: "25px" },
+            fontSize: { xs: "22px", sm: "30px" },
+            fontWeight: "bold",
+            color: "#050430",
+          }}
+        >
+          {response.name}
+        </Box>
+        <Box
+          sx={{
+            m: "auto",
+            mt: "15px",
+            ml: { xs: "10px", sm: "25px" },
+            fontSize: { xs: "18px", sm: "20px" },
+            // fontWeight: "bold",
+            color: "#050430",
+          }}
+        >
+          {response.description} Here are some standout benefits:
+        </Box>
+        {response?.Benefits?.length > 0 && (
+          <Box
+            sx={{
+              m: "auto",
+              mt: "15px",
+              ml: { xs: "10px", sm: "25px" },
+              fontSize: { xs: "18px", sm: "20px" },
+              color: "#050430",
+            }}
+          >
+            {response.Benefits.map((item, index) => (
+              <Box
+                key={index}
+                sx={{
+                  m: "auto",
+                  mt: "15px",
+                  ml: {
+                    xs: item?.head ? "10px" : "15px",
+                    sm: item?.head ? "25px" : "60px",
+                  },
+                  fontSize: { xs: "18px", sm: "20px" },
+                  color: "#050430",
+                }}
+              >
+                {item?.head ? (
+                  <span style={{ fontWeight: "bold" }}>
+                    {index + 1}.{item.head}:&nbsp;
+                  </span>
+                ) : null}
+                {item.body}
+              </Box>
+            ))}
+          </Box>
+        )}
+      </Stack>
+    </Container>
   );
 }

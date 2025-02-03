@@ -4,7 +4,7 @@ import Navbars from "./Utils/Navbars";
 import { DrawerProvider } from "./Utils/DrawerContext";
 import MiniDrawer from "./Utils/DrawerPatient/MyDrawer";
 import MtThemes from "./Utils/MtThemes";
-
+import ReduxProvider from "../../ReduxProvider";
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+      <ReduxProvider>
         <MtThemes>
           <DrawerProvider>
             <Navbars />
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
             <MyFooter />
           </DrawerProvider>
         </MtThemes>
+      </ReduxProvider>
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 import { Box, Paper, Typography,Button } from '@mui/material';
 import React from 'react'
 import SearchIcon from "@mui/icons-material/Search";
-const MyCard = () => {
+const MyCard = ({item}) => {
   return (
     <Paper
       component="div"
@@ -9,11 +9,11 @@ const MyCard = () => {
       sx={{
         backgroundColor: "#0E83AF",
         backgroundImage:
-          "url('https://res.cloudinary.com/dyunrntg7/image/upload/v1735150769/image_z9jvlv.png')",
+          `url('${item?.image?.url || ''}')`,
         backgroundSize: "cover",
         borderRadius: "10px",
         filter: "brightness(0.8)",
-        p: "160px 32px",
+        // p: "160px 32px",
         margin: "auto",
         maxWidth: "460px",
         cursor: "pointer",
@@ -32,7 +32,10 @@ const MyCard = () => {
           marginTop: 3,
           display: "flex",
           flexDirection: "column",
+          justifyContent : "center",
+          alignItems : "center", 
           gap: "20px",
+                  height:"500px",
         }}
       >
         <Box
@@ -48,7 +51,7 @@ const MyCard = () => {
             variant="h4"
             sx={{ textAlign: "center", fontWeight: "bold", color: "white" }}
           >
-            GIARDINERA GREEK STYLE MIXED PICKLES
+            {item.name}
           </Typography>
         </Box>
         <Box

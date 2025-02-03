@@ -16,7 +16,9 @@ import {
   Avatar,
   ListItem,
   ListItemIcon,
-  ListItemText
+  ListItemText,
+  Collapse,
+  Button
 } from "@mui/material";
 import { drawerWidth } from "../Roles";
 import MyDrawerlogic from "./MyDrawerlogic";
@@ -24,52 +26,143 @@ import CategoryIcon from '@mui/icons-material/Category';
 import BrandingWatermarkIcon from '@mui/icons-material/BrandingWatermark';
 import MoneyIcon from '@mui/icons-material/Money';
 import {
-  BarChartOutlined,
-  Commute,
   ContactsOutlined,
-  EmojiTransportation,
   ExpandLess,
   ExpandMore,
   GroupOutlined,
   HomeOutlined,
-  MapOutlined,
-  Payment,
-  Payments,
-  Subscriptions,
-  TimelineOutlined,
-  WebAsset,
 } from "@mui/icons-material";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import Link from "next/link";
 import { grey } from "@mui/material/colors";
 import { usePathname } from "next/navigation"; 
+import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import CardMembershipIcon from '@mui/icons-material/CardMembership';
+import AssignmentIcon from "@mui/icons-material/Assignment";
+import ForestIcon from '@mui/icons-material/Forest';
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 var array1 = [
   {
     id: 1,
     name: "Dashboard",
     icon: <HomeOutlined />,
-    link: "/PatientDashboard",
+    // link: "/AdminDashboard/admin",
+    link: "#",
+
   },
   {
     id: 2,
+    name: "User Profile",
+    icon: <GroupOutlined />,
+    link: "/AdminDashboard/admin/UserProfile",
+  },
+];
+var array8 = [
+  {
+    id: 1,
     name: "Manage Team",
     icon: <GroupOutlined />,
-    link: "/PatientDashboard/team",
+    link: "/AdminDashboard/admin/Users/teams",
+  },
+  {
+    id: 2,
+    name: "Users Info",
+    icon: <ContactsOutlined />,
+    link: "/AdminDashboard/admin/Users/users",
   },
   {
     id: 3,
-    name: "Users Information",
-    icon: <ContactsOutlined />,
-    link: "/PatientDashboard/AllUsers",
-  },
-  {
-    id: 4,
     name: "Add User",
     icon: <PersonOutlinedIcon />,
-    link: "/PatientDashboard/addUser",
+    link: "/AdminDashboard/admin/Users/addUser",
   },
 ];
-const MyDrawerData = () => {
+var array2 = [
+  {
+    id: 1,
+    name: "Add Category",
+    icon: <CategoryIcon />,
+    link: "/AdminDashboard/admin/Categories/addCategory",
+  },
+  {
+    id: 2,
+    name: "ALL Categories",
+    icon: <CategoryIcon />,
+    link: "/AdminDashboard/admin/Categories/allCategories",
+  },
+];
+var array3 = [
+  {
+    id: 1,
+    name: "Add ClientType",
+    icon: <SupervisedUserCircleIcon />,
+    link: "/AdminDashboard/admin/ClientTypes/addClientType",
+  },
+  {
+    id: 2,
+    name: "ALL ClientTypes",
+    icon: <SupervisedUserCircleIcon />,
+    link: "/AdminDashboard/admin/ClientTypes/allClientTypes",
+  },
+];
+var array4 = [
+  {
+    id: 1,
+    name: "Add Client",
+    icon: <Diversity3Icon />,
+    link: "/AdminDashboard/admin/Clients/addClient",
+  },
+  {
+    id: 2,
+    name: "ALL Clients",
+    icon: <Diversity3Icon />,
+    link: "/AdminDashboard/admin/Clients/allClients",
+  },
+];
+var array5 = [
+  {
+    id: 1,
+    name: "Add Certificate",
+    icon: <CardMembershipIcon />,
+    link: "/AdminDashboard/admin/Certificates/addCertificate",
+  },
+  {
+    id: 2,
+    name: "ALL Certificates",
+    icon: <CardMembershipIcon />,
+    link: "/AdminDashboard/admin/Certificates/allCertificates",
+  },
+];
+var array6 = [
+  {
+    id: 1,
+    name: "Add Blog",
+    icon: <AssignmentIcon />,
+    link: "/AdminDashboard/admin/Blogs/addBlog",
+  },
+  {
+    id: 2,
+    name: "ALL Blogs",
+    icon: <AssignmentIcon />,
+    link: "/AdminDashboard/admin/Blogs/allBlogs",
+  },
+];
+var array7 = [
+  {
+    id: 1,
+    name: "Add Product",
+    icon: <ForestIcon />,
+    link: "/AdminDashboard/admin/Products/addProduct",
+  },
+  {
+    id: 2,
+    name: "ALL Products",
+    icon: <ForestIcon />,
+    link: "/AdminDashboard/admin/Products/allProducts",
+  },
+];
+const MyDrawerData = (response) => {
   const [
     open,
     setOpen,
@@ -77,33 +170,53 @@ const MyDrawerData = () => {
     handleDrawerClose,
     variant,
     theme,
-    isDrawerOpen,
-    closeDrawer,
+    isDrawerOpenSecond,
+    closeDrawerSecond,
     openedMixin,
     closedMixin,
     DrawerHeader,
-    handleItemClick
+    handleItemClick,
+    openDrawerSecond,
+    ListOpen,
+    handleClick,
+    ListTwoOpen,
+    handleClickTwo,
+    ListThreeOpen,
+    handleClickThree,
+    ListFourOpen,
+    handleClickFour,
+    ListFiveOpen,
+    handleClickFive,
+    ListSexOpen,
+    handleClickSex,
+    ListSevenOpen,
+    handleClickSeven,
+    handleLogout
   ] = MyDrawerlogic();
 const pathname = usePathname();
+// console.log(response.response.data)
   return (
     <div>
       <CssBaseline />
       <Drawer
         variant={variant}
-        open={isDrawerOpen}
-        onClose={closeDrawer}
+        open={isDrawerOpenSecond}
+        onClose={closeDrawerSecond}
         ModalProps={{ keepMounted: false }}
+        // onClick={openDrawerSecond}
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          ...(isDrawerOpen && {
+          ...(isDrawerOpenSecond && {
             ...openedMixin(theme),
             "& .MuiDrawer-paper": openedMixin(theme),
           }),
-          ...(!isDrawerOpen && {
+          ...(!isDrawerOpenSecond && {
             ...closedMixin(theme),
             "& .MuiDrawer-paper": closedMixin(theme),
           }),
+          pt: 7,
+          zIndex: 1,
         }}
       >
         <Box
@@ -117,7 +230,10 @@ const pathname = usePathname();
           role="presentation"
         >
           <DrawerHeader>
-            <IconButton onClick={closeDrawer} sx={{ marginRight: "50px" }}>
+            <IconButton
+              onClick={openDrawerSecond}
+              sx={{ marginRight: "180px" }}
+            >
               {theme.direction === "rtl" ? (
                 <ChevronRightIcon />
               ) : (
@@ -128,43 +244,73 @@ const pathname = usePathname();
           <Divider />
           <Avatar
             sx={{
-              mx: isDrawerOpen ? "auto" : "5px",
+              mx: isDrawerOpenSecond ? "auto" : "3px",
               my: 3,
-              width: isDrawerOpen ? 88 : 50,
-              height: isDrawerOpen ? 88 : 50,
+              width: isDrawerOpenSecond ? 88 : 50,
+              height: isDrawerOpenSecond ? 88 : 50,
               border: "2px solid grey",
+              cursor: "pointer",
+              fontWeight: "bold",
+              fontSize: "22px",
+              backgroundColor: "#8B4513",
+              color: "White",
             }}
-            alt="Remy Sharp"
-            src="https://iili.io/JGbBCox.jpg"
-          />
+            alt="User Profile"
+            src={response?.response?.data?.profileImage?.url || ""}
+            onClick={openDrawerSecond}
+          >
+            {response?.response?.data?.name
+              ?.trim()
+              ?.split(" ")
+              ?.filter((word) => word.length > 0)
+              ?.slice(0, 2)
+              ?.map((word) => word.charAt(0).toUpperCase())
+              ?.join("") ?? "U"}
+          </Avatar>
           <Typography
             align="center"
             sx={{
-              fontSize: isDrawerOpen ? "17px" : "0px",
-              display: isDrawerOpen ? "block" : "none",
+              fontSize: isDrawerOpenSecond ? "17px" : "0px",
+              display: isDrawerOpenSecond ? "block" : "none",
             }}
           >
-            hassan khaled
+            {response?.response?.data?.name || ""}
           </Typography>
           <Typography
             align="center"
             sx={{
-              fontSize: isDrawerOpen ? "17px" : "0px",
+              fontSize: isDrawerOpenSecond ? "17px" : "0px",
               color: theme.palette.info.main,
-              display: isDrawerOpen ? "block" : "none",
+              display: isDrawerOpenSecond ? "block" : "none",
             }}
           >
-          User
+            Admin
           </Typography>
+          <Button
+            align="center"
+            sx={{
+              fontSize: isDrawerOpenSecond ? "17px" : "0px",
+              color: "#8B4513",
+              display: isDrawerOpenSecond ? "block" : "none",
+              margin: "5px auto",
+              fontWeight: "bold",
+              "&:hover": {
+                backgroundColor: "#8b45133d",
+              },
+            }}
+            onClick={handleLogout}
+          >
+            Logout
+          </Button>
           <Divider />
-                    <List>
+          <List>
             {array1.map((item) => (
               <ListItem key={item.id} disablePadding sx={{ display: "block" }}>
                 <ListItemButton
                   onClick={() => handleItemClick(item.link)} // Update route on click
                   sx={{
                     minHeight: 48,
-                    justifyContent: open ? "initial" : "center",
+                    justifyContent: isDrawerOpenSecond ? "initial" : "center",
                     px: 2.5,
                     bgcolor:
                       pathname === item.link
@@ -177,191 +323,480 @@ const pathname = usePathname();
                   <ListItemIcon
                     sx={{
                       minWidth: 0,
-                      mr: isDrawerOpen ? 3 : "auto",
+                      mr: isDrawerOpenSecond ? 3 : "auto",
                       justifyContent: "center",
-                      color: theme.palette.secondary.main,
+                      color: "#8B4513",
                     }}
                   >
                     {item.icon}
                   </ListItemIcon>
                   <ListItemText
                     primary={item.name}
-                    sx={{ opacity: isDrawerOpen ? 1 : 0, fontWeight: "500" }}
+                    sx={{
+                      opacity: isDrawerOpenSecond ? 1 : 0,
+                      fontWeight: "500",
+                    }}
                   />
                 </ListItemButton>
               </ListItem>
             ))}
           </List>
           <Divider />
-          <Typography
-            sx={{
-              fontSize: isDrawerOpen ? "19px" : "19px",
-              color: theme.palette.secondary.main,
-              display: isDrawerOpen ? "flex" : "flex",
-              marginLeft: "12px",
-              my: 2,
-              width: "85%",
-              fontWeight: "bold",
-            }}
-          >
-            <CategoryIcon sx={{fontSize: isDrawerOpen ? "24px" : "35px",marginRight : "8px"}}/>
-            {isDrawerOpen ? "Categories and sub" : ""}
-          </Typography>
           <List
-            sx={{ width: "93%", maxWidth: 360, bgcolor: "background.paper", display : isDrawerOpen ? "block" : "none" }}
+            sx={{ width: "93%", maxWidth: 360, bgcolor: "white" }}
             component="nav"
             aria-labelledby="nested-list-subheader"
           >
-            <List component="div" disablePadding>
-              <ListItemButton
-                component="Typography"
-                // key={item.id}
-                // to={item.link}
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  // px: 2.5,
-                  pl: 4,
-                  // bgcolor: grey[800],
-                }}
-              >
-                <FormControlLabel label="Child 2" control={<Checkbox />} />
-              </ListItemButton>
-            </List>
+            <ListItemButton
+              onClick={handleClickSeven}
+              component="nav"
+              sx={{
+                minHeight: 48,
+                justifyContent: isDrawerOpenSecond ? "initial" : "center",
+                px: 2,
+                bgcolor: theme.palette.mode === "dark" ? "#0e0748" : "white",
+              }}
+            >
+              <ListItemIcon>
+                <PeopleAltIcon
+                  sx={{
+                    fontSize: isDrawerOpenSecond ? "24px" : "35px",
+                    marginRight: "8px",
+                    color: "#8B4513",
+                  }}
+                />
+              </ListItemIcon>
+              <ListItemText primary="Our Users" />
+              {ListSevenOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse in={ListSevenOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {array8.map((item) => (
+                  <Link key={item.id} href={item.link} underline="none">
+                    <ListItemButton
+                      key={item.id}
+                      component="nav"
+                      to={item.link}
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: isDrawerOpenSecond
+                          ? "initial"
+                          : "center",
+                        // px: 2.5,
+                        pl: 4,
+                        bgcolor:
+                          pathname === item.link
+                            ? theme.palette.mode === "dark"
+                              ? grey[800]
+                              : grey[300]
+                            : null,
+                      }}
+                    >
+                      <ListItemIcon>{item.icon}</ListItemIcon>
+                      <ListItemText
+                        primary={item.name}
+                        sx={{
+                          opacity: isDrawerOpenSecond ? 1 : 0,
+                          fontWeight: "500",
+                        }}
+                      />
+                    </ListItemButton>
+                  </Link>
+                ))}
+              </List>
+            </Collapse>
           </List>
           <Divider />
-          <Typography
-            sx={{
-              fontSize: isDrawerOpen ? "19px" : "19px",
-              color: theme.palette.secondary.main,
-              display: isDrawerOpen ? "flex" : "flex",
-              marginLeft: "12px",
-              my: 2,
-              width: "85%",
-              fontWeight: "bold",
-            }}
-          >
-            <BrandingWatermarkIcon sx={{fontSize: isDrawerOpen ? "24px" : "35px",marginRight : "8px"}}/>
-            {isDrawerOpen ? "Brands" : ""}
-          </Typography>
           <List
-            sx={{ width: "93%", maxWidth: 360, bgcolor: "background.paper",display : isDrawerOpen ? "block" : "none" }}
+            sx={{ width: "93%", maxWidth: 360, bgcolor: "white" }}
             component="nav"
             aria-labelledby="nested-list-subheader"
           >
-            <List component="div" disablePadding>
-              <ListItemButton
-                component="Typography"
-                // key={item.id}
-                // to={item.link}
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  // px: 2.5,
-                  pl: 4,
-                  // bgcolor: grey[800],
-                }}
-              >
-                <FormControlLabel label="Child 2" control={<Checkbox />} />
-              </ListItemButton>
-            </List>
+            <ListItemButton
+              onClick={handleClick}
+              component="nav"
+              sx={{
+                minHeight: 48,
+                justifyContent: isDrawerOpenSecond ? "initial" : "center",
+                px: 2,
+                bgcolor: theme.palette.mode === "dark" ? "#0e0748" : "white",
+              }}
+            >
+              <ListItemIcon>
+                <CategoryIcon
+                  sx={{
+                    fontSize: isDrawerOpenSecond ? "24px" : "35px",
+                    marginRight: "8px",
+                    color: "#8B4513",
+                  }}
+                />
+              </ListItemIcon>
+              <ListItemText primary="Our Categories" />
+              {ListOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse in={ListOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {array2.map((item) => (
+                  <Link key={item.id} href={item.link} underline="none">
+                    <ListItemButton
+                      key={item.id}
+                      component="nav"
+                      to={item.link}
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: isDrawerOpenSecond
+                          ? "initial"
+                          : "center",
+                        // px: 2.5,
+                        pl: 4,
+                        bgcolor:
+                          pathname === item.link
+                            ? theme.palette.mode === "dark"
+                              ? grey[800]
+                              : grey[300]
+                            : null,
+                      }}
+                    >
+                      <ListItemIcon>{item.icon}</ListItemIcon>
+                      <ListItemText
+                        primary={item.name}
+                        sx={{
+                          opacity: isDrawerOpenSecond ? 1 : 0,
+                          fontWeight: "500",
+                        }}
+                      />
+                    </ListItemButton>
+                  </Link>
+                ))}
+              </List>
+            </Collapse>
           </List>
           <Divider />
-          <Typography
-            sx={{
-              fontSize: isDrawerOpen ? "19px" : "19px",
-              color: theme.palette.secondary.main,
-              display: isDrawerOpen ? "block" : "block",
-              marginLeft: "12px",
-              my: 2,
-              width: "85%",
-              fontWeight: "bold",
-            }}
+          <List
+            sx={{ width: "93%", maxWidth: 360, bgcolor: "white" }}
+            component="nav"
+            aria-labelledby="nested-list-subheader"
           >
-            <MoneyIcon sx={{fontSize: isDrawerOpen ? "24px" : "35px",marginRight : "8px"}}/>
-            {isDrawerOpen ? "Prices" : ""}
-            
-          </Typography>
-          <ListItemButton
-            component="Typography"
-            // key={item.id}
-            // to={item.link}
-            sx={{
-              minHeight: 48,
-              justifyContent: open ? "initial" : "center",
-              // px: 2.5,
-              pl: 4,
-              // bgcolor: grey[800],
-              display : isDrawerOpen ? "flex" : "none",
-            }}
-          >
-            <Typography
+            <ListItemButton
+              onClick={handleClickTwo}
+              component="nav"
               sx={{
-                fontSize: isDrawerOpen ? "16px" : "16px",
-                color: theme.palette.secondary.main,
-                display: isDrawerOpen ? "block" : "block",
-                my: 2,
-                width: "25%",
-                fontWeight: "bold",
+                minHeight: 48,
+                justifyContent: isDrawerOpenSecond ? "initial" : "center",
+                px: 2,
+                bgcolor: theme.palette.mode === "dark" ? "#0e0748" : "white",
               }}
             >
-              From :
-            </Typography>
-            <input
-              className="m-2 text-center input"
-              type="number"
-              style={{
-                color: "black",
-                width: "110px",
-                height: "40px",
-                backgroundColor: "transparent",
-                fontSize: "22px",
-                border: "2px solid black",
-                borderRadius: "10px",
-                padding: "10px",
-              }}
-            />
-          </ListItemButton>
-          <ListItemButton
-            component="Typography"
-            // key={item.id}
-            // to={item.link}
-            sx={{
-              minHeight: 48,
-              justifyContent: open ? "initial" : "center",
-              // px: 2.5,
-              pl: 4,
-              // bgcolor: grey[800],
-              display : isDrawerOpen ? "flex" : "none"
-            }}
+              <ListItemIcon>
+                <SupervisedUserCircleIcon
+                  sx={{
+                    fontSize: isDrawerOpenSecond ? "24px" : "35px",
+                    marginRight: "8px",
+                    color: "#8B4513",
+                  }}
+                />
+              </ListItemIcon>
+              <ListItemText primary="Our ClientTypes" />
+              {ListTwoOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse in={ListTwoOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {array3.map((item) => (
+                  <Link key={item.id} href={item.link} underline="none">
+                    <ListItemButton
+                      key={item.id}
+                      component="nav"
+                      to={item.link}
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: isDrawerOpenSecond
+                          ? "initial"
+                          : "center",
+                        // px: 2.5,
+                        pl: 4,
+                        bgcolor:
+                          pathname === item.link
+                            ? theme.palette.mode === "dark"
+                              ? grey[800]
+                              : grey[300]
+                            : null,
+                      }}
+                    >
+                      <ListItemIcon>{item.icon}</ListItemIcon>
+                      <ListItemText
+                        primary={item.name}
+                        sx={{
+                          opacity: isDrawerOpenSecond ? 1 : 0,
+                          fontWeight: "500",
+                        }}
+                      />
+                    </ListItemButton>
+                  </Link>
+                ))}
+              </List>
+            </Collapse>
+          </List>
+          <Divider />
+          <List
+            sx={{ width: "93%", maxWidth: 360, bgcolor: "white" }}
+            component="nav"
+            aria-labelledby="nested-list-subheader"
           >
-            <Typography
+            <ListItemButton
+              onClick={handleClickThree}
+              component="nav"
               sx={{
-                fontSize: isDrawerOpen ? "16px" : "16px",
-                color: theme.palette.secondary.main,
-                display: isDrawerOpen ? "block" : "block",
-                my: 2,
-                width: "18%",
-                fontWeight: "bold",
+                minHeight: 48,
+                justifyContent: isDrawerOpenSecond ? "initial" : "center",
+                px: 2,
+                bgcolor: theme.palette.mode === "dark" ? "#0e0748" : "white",
               }}
             >
-              To :
-            </Typography>
-            <input
-              className="m-2 text-center input"
-              type="number"
-              style={{
-                color: "black",
-                width: "120px",
-                height: "40px",
-                backgroundColor: "transparent",
-                fontSize: "22px",
-                border: "2px solid black",
-                borderRadius: "10px",
-                padding: "10px",
+              <ListItemIcon>
+                <Diversity3Icon
+                  sx={{
+                    fontSize: isDrawerOpenSecond ? "24px" : "35px",
+                    marginRight: "8px",
+                    color: "#8B4513",
+                  }}
+                />
+              </ListItemIcon>
+              <ListItemText primary="Our Clients" />
+              {ListThreeOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse in={ListThreeOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {array4.map((item) => (
+                  <Link key={item.id} href={item.link} underline="none">
+                    <ListItemButton
+                      key={item.id}
+                      component="nav"
+                      to={item.link}
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: isDrawerOpenSecond
+                          ? "initial"
+                          : "center",
+                        // px: 2.5,
+                        pl: 4,
+                        bgcolor:
+                          pathname === item.link
+                            ? theme.palette.mode === "dark"
+                              ? grey[800]
+                              : grey[300]
+                            : null,
+                      }}
+                    >
+                      <ListItemIcon>{item.icon}</ListItemIcon>
+                      <ListItemText
+                        primary={item.name}
+                        sx={{
+                          opacity: isDrawerOpenSecond ? 1 : 0,
+                          fontWeight: "500",
+                        }}
+                      />
+                    </ListItemButton>
+                  </Link>
+                ))}
+              </List>
+            </Collapse>
+          </List>
+          <Divider />
+          <List
+            sx={{ width: "93%", maxWidth: 360, bgcolor: "white" }}
+            component="nav"
+            aria-labelledby="nested-list-subheader"
+          >
+            <ListItemButton
+              onClick={handleClickFour}
+              component="nav"
+              sx={{
+                minHeight: 48,
+                justifyContent: isDrawerOpenSecond ? "initial" : "center",
+                px: 2,
+                bgcolor: theme.palette.mode === "dark" ? "#0e0748" : "white",
               }}
-            />
-          </ListItemButton>
+            >
+              <ListItemIcon>
+                <CardMembershipIcon
+                  sx={{
+                    fontSize: isDrawerOpenSecond ? "24px" : "35px",
+                    marginRight: "8px",
+                    color: "#8B4513",
+                  }}
+                />
+              </ListItemIcon>
+              <ListItemText primary="Our Certificates" />
+              {ListFourOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse in={ListFourOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {array5.map((item) => (
+                  <Link key={item.id} href={item.link} underline="none">
+                    <ListItemButton
+                      key={item.id}
+                      component="nav"
+                      to={item.link}
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: isDrawerOpenSecond
+                          ? "initial"
+                          : "center",
+                        // px: 2.5,
+                        pl: 4,
+                        bgcolor:
+                          pathname === item.link
+                            ? theme.palette.mode === "dark"
+                              ? grey[800]
+                              : grey[300]
+                            : null,
+                      }}
+                    >
+                      <ListItemIcon>{item.icon}</ListItemIcon>
+                      <ListItemText
+                        primary={item.name}
+                        sx={{
+                          opacity: isDrawerOpenSecond ? 1 : 0,
+                          fontWeight: "500",
+                        }}
+                      />
+                    </ListItemButton>
+                  </Link>
+                ))}
+              </List>
+            </Collapse>
+          </List>
+          <Divider />
+          <List
+            sx={{ width: "93%", maxWidth: 360, bgcolor: "white" }}
+            component="nav"
+            aria-labelledby="nested-list-subheader"
+          >
+            <ListItemButton
+              onClick={handleClickFive}
+              component="nav"
+              sx={{
+                minHeight: 48,
+                justifyContent: isDrawerOpenSecond ? "initial" : "center",
+                px: 2,
+                bgcolor: theme.palette.mode === "dark" ? "#0e0748" : "white",
+              }}
+            >
+              <ListItemIcon>
+                <AssignmentIcon
+                  sx={{
+                    fontSize: isDrawerOpenSecond ? "24px" : "35px",
+                    marginRight: "8px",
+                    color: "#8B4513",
+                  }}
+                />
+              </ListItemIcon>
+              <ListItemText primary="Our Blogs" />
+              {ListFiveOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse in={ListFiveOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {array6.map((item) => (
+                  <Link key={item.id} href={item.link} underline="none">
+                    <ListItemButton
+                      key={item.id}
+                      component="nav"
+                      to={item.link}
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: isDrawerOpenSecond
+                          ? "initial"
+                          : "center",
+                        // px: 2.5,
+                        pl: 4,
+                        bgcolor:
+                          pathname === item.link
+                            ? theme.palette.mode === "dark"
+                              ? grey[800]
+                              : grey[300]
+                            : null,
+                      }}
+                    >
+                      <ListItemIcon>{item.icon}</ListItemIcon>
+                      <ListItemText
+                        primary={item.name}
+                        sx={{
+                          opacity: isDrawerOpenSecond ? 1 : 0,
+                          fontWeight: "500",
+                        }}
+                      />
+                    </ListItemButton>
+                  </Link>
+                ))}
+              </List>
+            </Collapse>
+          </List>
+          <Divider />
+          <List
+            sx={{ width: "93%", maxWidth: 360, bgcolor: "white" }}
+            component="nav"
+            aria-labelledby="nested-list-subheader"
+          >
+            <ListItemButton
+              onClick={handleClickSex}
+              component="nav"
+              sx={{
+                minHeight: 48,
+                justifyContent: isDrawerOpenSecond ? "initial" : "center",
+                px: 2,
+                bgcolor: theme.palette.mode === "dark" ? "#0e0748" : "white",
+              }}
+            >
+              <ListItemIcon>
+                <ForestIcon
+                  sx={{
+                    fontSize: isDrawerOpenSecond ? "24px" : "35px",
+                    marginRight: "8px",
+                    color: "#8B4513",
+                  }}
+                />
+              </ListItemIcon>
+              <ListItemText primary="Our Products" />
+              {ListSexOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse in={ListSexOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {array7.map((item) => (
+                  <Link key={item.id} href={item.link} underline="none">
+                    <ListItemButton
+                      key={item.id}
+                      component="nav"
+                      to={item.link}
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: isDrawerOpenSecond
+                          ? "initial"
+                          : "center",
+                        // px: 2.5,
+                        pl: 4,
+                        bgcolor:
+                          pathname === item.link
+                            ? theme.palette.mode === "dark"
+                              ? grey[800]
+                              : grey[300]
+                            : null,
+                      }}
+                    >
+                      <ListItemIcon>{item.icon}</ListItemIcon>
+                      <ListItemText
+                        primary={item.name}
+                        sx={{
+                          opacity: isDrawerOpenSecond ? 1 : 0,
+                          fontWeight: "500",
+                        }}
+                      />
+                    </ListItemButton>
+                  </Link>
+                ))}
+              </List>
+            </Collapse>
+          </List>
+          <Divider />
         </Box>
       </Drawer>
     </div>

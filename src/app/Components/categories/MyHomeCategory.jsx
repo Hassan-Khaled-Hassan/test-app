@@ -1,8 +1,14 @@
+'use server'
 import React from 'react'
 import Box from "@mui/material/Box";
 import "./restDetails.css";
+import axios from "axios";
 import MyHomeCategoryContain from './MyHomeCategoryContain';
-const MyHomeCategory = () => {
+const MyHomeCategory = async () => {
+    const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Blog/Blogs`
+  );
+  // console.log(response.data);
   return (
     <Box
       sx={{
@@ -14,7 +20,7 @@ const MyHomeCategory = () => {
         borderRadius: "0px",
       }}
     >
-      <MyHomeCategoryContain />
+      <MyHomeCategoryContain response={response.data.data} />
     </Box>
   );
 }

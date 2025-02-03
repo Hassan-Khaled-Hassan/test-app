@@ -1,4 +1,4 @@
-//MyFooter
+'use client'
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -17,6 +17,9 @@ import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
+import { useDrawer } from "./DrawerContext";
+import { drawerWidth } from "@/app/Utils/Roles";
+import { usePathname } from "next/navigation";
 function Copyright() {
   return (
     <Typography variant="body2" sx={{ color: "#ffffff", mt: 1 }}>
@@ -32,8 +35,37 @@ function Copyright() {
 }
 
 export default function MyFooter() {
+  const { isDrawerOpenSecond} =
+    useDrawer();
+    const pathname = usePathname();
   return (
-    <Box sx={{ backgroundColor: "#8B4513" }}>
+    <Box
+      sx={{
+        backgroundColor: "#8B4513",
+        width: {
+          xs: "100%",
+          md: pathname.includes("/AdminDashboard/admin")
+            ? isDrawerOpenSecond
+              ? `calc(100% - 243px)`
+              : "93.8%"
+            : "100%",
+          lg: pathname.includes("/AdminDashboard/admin")
+            ? isDrawerOpenSecond
+              ? `calc(100% - 243px)`
+              : "calc(100% - 72px)"
+            : "100%",
+        },
+        m: "auto",
+        marginLeft: {
+          xs: "auto",
+          md: pathname.includes("/AdminDashboard/admin")
+            ? isDrawerOpenSecond
+              ? "246px"
+              : "72px"
+            : "auto",
+        },
+      }}
+    >
       <Container
         sx={{
           display: "flex",

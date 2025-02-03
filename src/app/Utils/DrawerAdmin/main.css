@@ -1,3 +1,17 @@
-.css-1lwhjos-MuiPaper-root-MuiDrawer-paper , .css-cyqh1t-MuiPaper-root-MuiDrawer-paper {
-    border-right : 4px solid #9a3f9f !important
+.css-1lwhjos-MuiPaper-root-MuiDrawer-paper, .css-cyqh1t-MuiPaper-root-MuiDrawer-paper {
+    border-right: 4px solid #4CAF50 !important;
+    padding-top: 85px !important;
+    z-index: 1 !important;
+}
+
+@media (max-width : 992px) {
+    .css-1lwhjos-MuiPaper-root-MuiDrawer-paper, .css-cyqh1t-MuiPaper-root-MuiDrawer-paper {
+        padding-top: 56px !important;
+    }
+}
+
+@media (max-width : 768px) {
+    .css-1lwhjos-MuiPaper-root-MuiDrawer-paper, .css-cyqh1t-MuiPaper-root-MuiDrawer-paper {
+        padding-top: 36px !important;
+    }
 }

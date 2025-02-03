@@ -5,7 +5,6 @@ import { styled, useTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
 import { drawerWidth } from "../Roles";
 import { useRouter } from "next/navigation";
-
 const MyDrawerlogic = () => {
   const [open, setOpen] = useState(false);
   const handleDrawerOpen = () => {
@@ -16,8 +15,9 @@ const MyDrawerlogic = () => {
     setOpen(false);
   };
   //=============================================================
-  const { closeDrawer, isDrawerOpen } = useDrawer();
-  console.log(isDrawerOpen);
+  const { closeDrawer, isDrawerOpen, isDrawerOpenSecond, openDrawerSecond } =
+    useDrawer();
+  // console.log(isDrawerOpen);
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down("sm"));
   const [variant, setVariant] = useState(isXs ? "temporary" : "permanent");
@@ -70,6 +70,7 @@ const MyDrawerlogic = () => {
     closedMixin,
     DrawerHeader,
     handleItemClick,
+    openDrawerSecond
   ];
 };
 

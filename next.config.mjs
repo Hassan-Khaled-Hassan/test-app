@@ -6,10 +6,13 @@ const nextConfig = {
   // output: "export", // Enables static export mode
   images: {
     domains: ["res.cloudinary.com"],
-     unoptimized: true, // Ensures images work in static export
+    unoptimized: true, // Ensures images work in static export
   },
   experimental: {
     turbopack: false, // Disable Turbopack
+    serverActions: {
+      bodySizeLimit: "10mb", // Adjust the size limit as needed
+    },
   },
 };
 

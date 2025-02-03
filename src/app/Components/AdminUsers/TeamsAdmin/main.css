@@ -1,0 +1,55 @@
+.myAnimation {
+    color: black;
+    /* Text color */
+    -webkit-text-stroke: 0.14vw #003366;
+    /* Outer stroke color */
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+}
+
+.myAnimation::before {
+    content: "Deleting Now....";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: rgb(139 69 19);
+    -webkit-text-stroke: 0vw #003366;
+    border-right: 3px solid rgb(139 69 19);
+    overflow: hidden;
+    animation: typingEffect 10s linear infinite alternate;
+    -webkit-animation: typingEffect 10s linear infinite alternate;
+    -webkit-animation: typingEffect 10s linear infinite alternate;
+}
+
+@keyframes typingEffect {
+    0% {
+        width: 0;
+        /* Start with no text */
+    }
+
+    50% {
+        width: 100%;
+        /* Fully revealed text */
+    }
+
+    100% {
+        width: 0;
+        /* Back to no text */
+    }
+}
+
+
+.css-10d30g3-MuiPaper-root-MuiDialog-paper {
+    border-radius: 25px !important;
+    -webkit-border-radius: 25px !important;
+    -moz-border-radius: 25px !important;
+    -ms-border-radius: 25px !important;
+    -o-border-radius: 25px !important;
+    -webkit-border-radius: 25px !important;
+}

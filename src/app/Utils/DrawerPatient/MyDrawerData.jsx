@@ -13,7 +13,8 @@ import {
   Avatar,
   ListItem,
   ListItemIcon,
-  ListItemText
+  ListItemText,
+  Button
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import MyDrawerlogic from "./MyDrawerlogic";
@@ -30,7 +31,13 @@ import { useMediaQuery } from "@mui/material";
 var array1 = [
   { id: 1, name: "Home", link: "/", icon: <HomeIcon /> },
   { id: 2, name: "About", link: "/About-Us", icon: <InfoIcon /> },
-  { id: 3, name: "Products", link: "/Products", icon: <InventoryIcon /> },
+  { 
+    id: 3,
+    name: "Products",
+    // link: "/Products",
+    link: "#",
+    icon: <InventoryIcon /> 
+  },
   { id: 4, name: "Success Stories", link: "/Stories", icon: <AutoStoriesIcon /> },
   { id: 5, name: "Blogs", link: "/Blogs", icon: <ArticleIcon /> },
   { id: 6, name: "Contact Us", link: "/Contact-Us", icon: <ContactPageIcon /> },
@@ -48,9 +55,11 @@ const MyDrawerData = () => {
     openedMixin,
     closedMixin,
     DrawerHeader,
-    handleItemClick
+    handleItemClick,
+    openDrawerSecond
   ] = MyDrawerlogic();
 const pathname = usePathname();
+// console.log(pathname)
 const isMobile = useMediaQuery(theme.breakpoints.down("mmd"));
   return (
     <div>
@@ -155,6 +164,32 @@ const isMobile = useMediaQuery(theme.breakpoints.down("mmd"));
               </ListItem>
             ))}
           </List>
+          <Box
+          sx={{ display: { xs: pathname.includes("/AdminDashboard/admin")? "flex" : "none", md: "none" }, justifyContent: "center" }}
+        >
+          <Button
+            variant="contained"
+            sx={{
+              borderRadius: "15px",
+              p: ["10px 22px", "10px 30px"], // Responsive padding values for mobile and larger screens
+              background: "#8B4513",
+              color: "white",
+              fontWeight: "bold",
+              "&:hover": {
+                boxShadow:
+                  "6px -2px 30px 1px rgb(164, 69, 9), -13px 7px 50px 1px rgb(251, 251, 251)",
+              },
+              // boxShadow:
+              //   "6px -2px 30px 1px #CF77F3, -13px 7px 50px 1px #009BFF",
+              width: {xs : "200px",sm :"300px"},
+              textTransform: "capitalize",
+            }}
+            // type="submit"
+            onClick={openDrawerSecond}
+          >
+            Open Admin Panal
+          </Button>
+        </Box>
         </Box>
       </Drawer>
     </div>

@@ -14,6 +14,7 @@ const MyCategoryLogic = ({
   setIsBeginning,
   setIsEnd,
   num,
+  response
 }) => {
   return (
     <Swiper
@@ -39,12 +40,14 @@ const MyCategoryLogic = ({
         600: { slidesPerView: 2 },
         992: { slidesPerView: 4 },
       }}
+      preventClicks={false} // Ensures clicks are not blocked
+      preventClicksPropagation={false} // Prevents Swiper from interfering
       className="mySwiper"
     >
-      {imgUrls === true ? (
-        Array.from({ length: num }).map((_, index) => (
+      {response.length > 0 ? (
+        response.map((item, index) => (
           <SwiperSlide key={index}>
-            <MyCard />
+            <MyCard item={item}/>
           </SwiperSlide>
         ))
       ) : (
