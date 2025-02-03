@@ -5,7 +5,8 @@
       "Part": " Us",
       "image": "https://res.cloudinary.com/dsccvadus/image/upload/v1735663049/wznngs8waijadxme20sy.jpg",
       "paragraphs": [
-        "Siwa Garden thrives on transforming agricultural lands in Siwa into productive, thriving spaces. Our commitment to sustainable practices and innovative development sets us apart in the agricultural sector. We harness the unique characteristics of Siwa’s environment to create solutions that enhance productivity and sustainability, ensuring a bright future for local agriculture and the community."
+        "Nile Garden is a company deeply rooted in the traditions of Mediterranean cuisine, with a mission to bring the rich and savory flavors of this region to tables worldwide. Our journey began with a simple yet profound goal: to craft pickled products that not only taste delicious but also embody the essence of authentic Mediterranean pickling methods. Over the years, we have dedicated ourselves to perfecting our recipes and refining our techniques, ensuring that every product we offer meets the highest standards of quality and taste.",
+        "Our team comprises skilled artisans and food experts who share a common passion for excellence in every jar we produce. At Nile Garden, we believe that the best pickles start with the best ingredients. This is why we meticulously select the freshest olives, cucumbers, peppers, carrots, and other vegetables, sourced from trusted farmers who adhere to sustainable and ethical farming practices. Our commitment to quality begins in the fields and extends through every step of our production process."
       ]
     },
     {
@@ -54,10 +55,10 @@
       "image": "https://res.cloudinary.com/dsccvadus/image/upload/v1735665416/cu1vepbo4engit2l5c7e.png"
     }
   ],
-  "homeVedioSize" : {
-      "link": "https://www.youtube.com/embed/ls8zSMK_RIw?rel=0&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&playlist=ls8zSMK_RIw"
-    },
-    "homeVedioMobileSize" : {
-      "link": "https://www.youtube.com/embed/WHqA4S1I2ow?rel=0&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&playlist=WHqA4S1I2ow"
-    }
+  "homeVedioSize": {
+    "link": "https://www.youtube.com/embed/ls8zSMK_RIw?rel=0&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&playlist=ls8zSMK_RIw"
+  },
+  "homeVedioMobileSize": {
+    "link": "https://www.youtube.com/embed/WHqA4S1I2ow?rel=0&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&playlist=WHqA4S1I2ow"
+  }
 }
