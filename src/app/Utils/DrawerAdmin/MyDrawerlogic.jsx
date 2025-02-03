@@ -39,6 +39,8 @@ const MyDrawerlogic = () => {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    pt: 7,
+    zIndex: 1,
     overflowX: "hidden",
   });
   const closedMixin = (theme) => ({
@@ -48,6 +50,8 @@ const MyDrawerlogic = () => {
     }),
     overflowX: "hidden",
     width: `calc(${theme.spacing(7)} + 1px)`,
+    pt: 7,
+    zIndex: 1,
     [theme.breakpoints.up("sm")]: {
       width: `calc(${theme.spacing(9)} + 1px)`,
     },
