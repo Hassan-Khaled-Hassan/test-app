@@ -11,7 +11,7 @@ const MyDashboard = async () => {
     redirect("/AdminDashboard/Auth/login"); // Redirect if no token
   }
     const response = await axios.get(
-      "http://localhost:8000/api/v1/Users/UserData",
+      `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Users/UserData`,
       {
         headers: { Authorization: `Bearer ${authToken}` },
       }
