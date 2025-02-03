@@ -350,7 +350,7 @@ const MyForms = () => {
               backgroundColor: "#8B4513",
             }}
           >
-            Add Product
+            Add User
           </Button>
         </Box>
       </Box>
