@@ -73,7 +73,7 @@ const MyLogin = () => {
               }}
             >
               <Image
-                src="/olive tree-bro.png"
+                src="https://siwagarden.com/olive tree-bro.png"
                 width={500}
                 height={500}
                 alt="Description"
