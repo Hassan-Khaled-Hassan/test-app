@@ -1,4 +1,4 @@
-.css-1lwhjos-MuiPaper-root-MuiDrawer-paper, .css-cyqh1t-MuiPaper-root-MuiDrawer-paper {
+.MuiDrawer-root> .MuiPaper-root {
     border-right: 4px solid #4CAF50 !important;
     padding-top: 85px !important;
     z-index: 1 !important;

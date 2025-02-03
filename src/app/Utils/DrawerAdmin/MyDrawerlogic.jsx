@@ -41,6 +41,7 @@ const MyDrawerlogic = () => {
     }),
     pt: 7,
     zIndex: 1,
+    borderRight: "4px solid #4CAF50 !important",
     overflowX: "hidden",
   });
   const closedMixin = (theme) => ({
@@ -50,8 +51,9 @@ const MyDrawerlogic = () => {
     }),
     overflowX: "hidden",
     width: `calc(${theme.spacing(7)} + 1px)`,
-    pt: 7,
+    pt: 10.5,
     zIndex: 1,
+    borderRight: "4px solid #4CAF50 !important",
     [theme.breakpoints.up("sm")]: {
       width: `calc(${theme.spacing(9)} + 1px)`,
     },
