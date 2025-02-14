@@ -26,7 +26,7 @@ export default async function Page() {
         name={"About"}
       />
       <MyAboutContent data={data.aboutList?.[0] || {}} />
-      {data.aboutList?.length > 1 ? (
+      {data.aboutList?.length > 0 ? (
         data.aboutList.map((item, index) => (
           <MyAboutList key={index} data={item} myIndex={index} />
         ))
