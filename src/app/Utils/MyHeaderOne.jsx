@@ -44,6 +44,7 @@ const MyHeaderOne = ({
             fontSize: { xs: "26px", sm: "40px" },
             fontWeight: "bold",
             color: "#4C6444",
+            textAlign : "center",
           }}
           aria-label={`Go to ${name}`}
         >

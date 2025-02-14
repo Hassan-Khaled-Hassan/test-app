@@ -83,8 +83,8 @@ const isMobile = useMediaQuery(theme.breakpoints.down("mmd"));
           }),
           "& .MuiDrawer-paper": {
             width: "280px",
-            backgroundColor: theme.palette.background.paper,
-            borderLeft: "7px solid #8B4513", // Optional: Removes the left border for right-side drawers
+            backgroundColor: "#4C6444",
+            borderLeft: "7px solid #F1E8D8", // Optional: Removes the left border for right-side drawers
             transition: "transform 0.3s ease",
             zIndex: "1300", // Optional: Smoother transition for opening and closing
           },
@@ -96,10 +96,10 @@ const isMobile = useMediaQuery(theme.breakpoints.down("mmd"));
               onClick={closeDrawer}
               sx={{
                 marginRight: "15px",
-                backgroundColor: "#8B4513",
-                color: "white",
+                backgroundColor: "#F1E8D8",
+                color: "#4C6444",
                 ":hover": {
-                  backgroundColor: "#8B4513",
+                  backgroundColor: "#F1E8D8",
                 },
               }}
             >
@@ -107,7 +107,7 @@ const isMobile = useMediaQuery(theme.breakpoints.down("mmd"));
             </IconButton>
           </DrawerHeader>
           <Image
-            src="https://res.cloudinary.com/dyunrntg7/image/upload/v1735150770/Logo_v93bay.png"
+            src="https://res.cloudinary.com/dsccvadus/image/upload/v1739444892/i0tx8doibxcus7cjkujx.png"
             width={400}
             height={200}
             style={{
@@ -129,12 +129,7 @@ const isMobile = useMediaQuery(theme.breakpoints.down("mmd"));
                     minHeight: 48,
                     justifyContent: open ? "initial" : "center",
                     px: 2.5,
-                    bgcolor:
-                      pathname === item.link
-                        ? theme.palette.mode === "dark"
-                          ? grey[800]
-                          : grey[300]
-                        : null,
+                    fontSize: "32px",
                   }}
                 >
                   <ListItemIcon
@@ -142,7 +137,12 @@ const isMobile = useMediaQuery(theme.breakpoints.down("mmd"));
                       minWidth: 0,
                       mr: isDrawerOpen ? 3 : "auto",
                       justifyContent: "center",
-                      color: "#4CAF50",
+                      color: pathname === item.link ? "#F1E8D8" : "white",
+                      fontSize: "32px",
+                      "&:hover": {
+                        backgroundColor: "transparent", // Sets the background color to red on hover
+                        color: "#F1E8D8",
+                      },
                     }}
                   >
                     {item.icon}
@@ -151,12 +151,16 @@ const isMobile = useMediaQuery(theme.breakpoints.down("mmd"));
                     primary={item.name}
                     sx={{
                       opacity: isDrawerOpen ? 1 : 0,
-                      color: "#050430",
-                      fontSize: "22px",
+                      color: pathname === item.link ? "#F1E8D8" : "white",
+                      fontSize: "32px",
                       fontWeight: "bold",
+                      "& .MuiTypography-root": {
+                        backgroundColor: "transparent", // Sets the background color to red on hover
+                        fontSize: "20px",
+                      },
                       "&:hover": {
                         backgroundColor: "transparent", // Sets the background color to red on hover
-                        color: "#8B4513",
+                        color: "#F1E8D8",
                       },
                     }}
                   />
@@ -165,31 +169,39 @@ const isMobile = useMediaQuery(theme.breakpoints.down("mmd"));
             ))}
           </List>
           <Box
-          sx={{ display: { xs: pathname.includes("/AdminDashboard/admin")? "flex" : "none", md: "none" }, justifyContent: "center" }}
-        >
-          <Button
-            variant="contained"
             sx={{
-              borderRadius: "15px",
-              p: ["10px 22px", "10px 30px"], // Responsive padding values for mobile and larger screens
-              background: "#8B4513",
-              color: "white",
-              fontWeight: "bold",
-              "&:hover": {
-                boxShadow:
-                  "6px -2px 30px 1px rgb(164, 69, 9), -13px 7px 50px 1px rgb(251, 251, 251)",
+              display: {
+                xs: pathname.includes("/AdminDashboard/admin")
+                  ? "flex"
+                  : "none",
+                md: "none",
               },
-              // boxShadow:
-              //   "6px -2px 30px 1px #CF77F3, -13px 7px 50px 1px #009BFF",
-              width: {xs : "200px",sm :"300px"},
-              textTransform: "capitalize",
+              justifyContent: "center",
             }}
-            // type="submit"
-            onClick={openDrawerSecond}
           >
-            Open Admin Panal
-          </Button>
-        </Box>
+            <Button
+              variant="contained"
+              sx={{
+                borderRadius: "15px",
+                p: ["10px 22px", "10px 30px"], // Responsive padding values for mobile and larger screens
+                background: "#F1E8D8",
+                color: "#4C6444",
+                fontWeight: "bold",
+                "&:hover": {
+                  boxShadow:
+                    "6px -2px 30px 1px rgb(45, 88, 15), -13px 7px 50px 1px rgb(251, 251, 251)",
+                },
+                // boxShadow:
+                //   "6px -2px 30px 1px #CF77F3, -13px 7px 50px 1px #009BFF",
+                width: { xs: "200px", sm: "300px" },
+                textTransform: "capitalize",
+              }}
+              // type="submit"
+              onClick={openDrawerSecond}
+            >
+              Open Admin Panal
+            </Button>
+          </Box>
         </Box>
       </Drawer>
     </div>
