@@ -13,8 +13,8 @@ const MyHomeCategoryContain = ({response}) => {
   return (
     <Box>
       <MyHeaderOne
-        part1={"Our"}
-        name={" Products"}
+        part1={"Discover"}
+        name={" high-quality products curated just for you"}
         swiperRef={swiperRef}
         isBeginning={isBeginning}
         isEnd={isEnd}
@@ -22,11 +22,12 @@ const MyHomeCategoryContain = ({response}) => {
       />
       <Container
         id="pricing"
-        maxWidth="xl"
+        // maxWidth="xl"
         sx={{
           pt: { xs: 1, sm: 1 },
           pb: { xs: 1, sm: 1 },
           position: "relative",
+          maxWidth : "1300px !important",
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
@@ -37,11 +38,9 @@ const MyHomeCategoryContain = ({response}) => {
         }}
       >
         <MyCategoryLogic
-          imgUrls={true}
           swiperRef={swiperRef}
           setIsBeginning={setIsBeginning}
           setIsEnd={setIsEnd}
-          num={10}
           response={response}
         />
       </Container>

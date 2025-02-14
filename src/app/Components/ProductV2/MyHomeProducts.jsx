@@ -8,7 +8,7 @@ import { getCookie, getCookies, hasCookie } from 'cookies-next/server';
 import { cookies } from 'next/headers';
 const MyHomeProducts = async () => {
   const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Product/Products`
+    `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Category/Categories`
   );
   // console.log(response.data.data)
   return (

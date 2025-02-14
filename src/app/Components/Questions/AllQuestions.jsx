@@ -55,21 +55,22 @@ export default function AllQuestions() {
             borderTopLeftRadius: "24px !important",
             borderTopRightRadius: "24px !important",
             mb: 2,
-            bgcolor: "#050430",
+            bgcolor: "white",
+            // border : "3px solid #4C6444"
           }}
         >
           <AccordionSummary
             expandIcon={
-              <ExpandMoreIcon sx={{ fontWeight: "bold", color: "white" }} />
+              <ExpandMoreIcon sx={{ fontWeight: "bold", color: "#4C6444" }} />
             }
             aria-controls="panel1d-content"
             id="panel1d-header"
-            sx={{ fontWeight: "bold", color: "white" }}
+            sx={{ fontWeight: "bold", color: "black" , border : "4px solid #4C6444" ,  borderRadius: "24px", }}
           >
             <Typography
               component="span"
               variant="subtitle2"
-              sx={{ fontWeight: "bold", fontSize: "18px", color: "white" }}
+              sx={{ fontWeight: "bold", fontSize: "18px", color: "black" }}
             >
               How do I contact customer support if I have a question or issue?
             </Typography>
@@ -109,21 +110,22 @@ export default function AllQuestions() {
             borderTopLeftRadius: "24px !important",
             borderTopRightRadius: "24px !important",
             mb: 2,
-            bgcolor: "#050430",
+            bgcolor: "white",
+            // border : "3px solid #4C6444"
           }}
         >
           <AccordionSummary
             expandIcon={
-              <ExpandMoreIcon sx={{ fontWeight: "bold", color: "white" }} />
+              <ExpandMoreIcon sx={{ fontWeight: "bold", color: "#4C6444" }} />
             }
             aria-controls="panel1d-content"
             id="panel1d-header"
-            sx={{ fontWeight: "bold", color: "white" }}
+            sx={{ fontWeight: "bold", color: "black" , border : "4px solid #4C6444" ,  borderRadius: "24px", }}
           >
             <Typography
               component="span"
               variant="subtitle2"
-              sx={{ fontWeight: "bold", fontSize: "18px", color: "white" }}
+              sx={{ fontWeight: "bold", fontSize: "18px", color: "black" }}
             >
               How do I contact customer support if I have a question or issue?
             </Typography>
@@ -163,21 +165,22 @@ export default function AllQuestions() {
             borderTopLeftRadius: "24px !important",
             borderTopRightRadius: "24px !important",
             mb: 2,
-            bgcolor: "#050430",
+            bgcolor: "white",
+            // border : "3px solid #4C6444"
           }}
         >
           <AccordionSummary
             expandIcon={
-              <ExpandMoreIcon sx={{ fontWeight: "bold", color: "white" }} />
+              <ExpandMoreIcon sx={{ fontWeight: "bold", color: "#4C6444" }} />
             }
             aria-controls="panel1d-content"
             id="panel1d-header"
-            sx={{ fontWeight: "bold", color: "white" }}
+            sx={{ fontWeight: "bold", color: "black" , border : "4px solid #4C6444" ,  borderRadius: "24px", }}
           >
             <Typography
               component="span"
               variant="subtitle2"
-              sx={{ fontWeight: "bold", fontSize: "18px", color: "white" }}
+              sx={{ fontWeight: "bold", fontSize: "18px", color: "black" }}
             >
               How do I contact customer support if I have a question or issue?
             </Typography>
@@ -217,21 +220,22 @@ export default function AllQuestions() {
             borderBottomLeftRadius: "24px !important",
             borderBottomRightRadius: "24px !important",
             mb: 2,
-            bgcolor: "#050430",
+            bgcolor: "white",
+            // border : "3px solid #4C6444"
           }}
         >
           <AccordionSummary
             expandIcon={
-              <ExpandMoreIcon sx={{ fontWeight: "bold", color: "white" }} />
+              <ExpandMoreIcon sx={{ fontWeight: "bold", color: "#4C6444" }} />
             }
             aria-controls="panel1d-content"
             id="panel1d-header"
-            sx={{ fontWeight: "bold", color: "white" }}
+            sx={{ fontWeight: "bold", color: "black" , border : "4px solid #4C6444" ,  borderRadius: "24px", }}
           >
             <Typography
               component="span"
               variant="subtitle2"
-              sx={{ fontWeight: "bold", fontSize: "18px", color: "white" }}
+              sx={{ fontWeight: "bold", fontSize: "18px", color: "black" }}
             >
               How do I contact customer support if I have a question or issue?
             </Typography>
@@ -240,8 +244,8 @@ export default function AllQuestions() {
             sx={{
               bgcolor: "white",
               borderRadius: "24px",
-              borderTopLeftRadius: "24px !important",
-              borderTopRightRadius: "24px !important",
+              borderBottomLeftRadius: "24px !important",
+              borderBottomRightRadius: "24px !important",
             }}
           >
             <Typography

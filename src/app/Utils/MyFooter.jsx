@@ -41,7 +41,7 @@ export default function MyFooter() {
   return (
     <Box
       sx={{
-        backgroundColor: "#8B4513",
+        backgroundColor: "#4C6444",
         width: {
           xs: "100%",
           md: pathname.includes("/AdminDashboard/admin")
@@ -73,6 +73,7 @@ export default function MyFooter() {
           alignItems: "center",
           gap: { xs: 4, sm: 8 },
           py: { xs: 8, sm: 10 },
+          px: { xs: "3px", sm: 1 },
           textAlign: { sm: "center", md: "left" },
         }}
       >
@@ -115,19 +116,120 @@ export default function MyFooter() {
                 </IconButton>
                 Siwa Garden
               </Box>
+              <Box
+                variant="body2"
+                sx={{
+                  color: "#F4F6FA",
+                  mt: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  lineHeight: 1.7,
+                }}
+              >
+                <IconButton
+                  color="#FFD700"
+                  size="small"
+                  sx={{ alignSelf: "center" }}
+                >
+                  <EmailIcon sx={{ color: "#F1E8D8" }} />
+                </IconButton>
+                mohamed.saleh@siwagarden.com <br/> mohamed.saleh@siwagarden.com
+              </Box>
+              <Box
+                variant="body2"
+                sx={{
+                  color: "#F4F6FA",
+                  mt: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  lineHeight: 1.7,
+                }}
+              >
+                <IconButton
+                  color="#FFD700"
+                  size="small"
+                  sx={{ alignSelf: "center" }}
+                >
+                  <PhoneIcon sx={{ color: "#F1E8D8" }} />
+                </IconButton>
+                +20 111 991 9899 - +20 111 441 2223
+              </Box>
+              <Box
+                variant="body2"
+                sx={{
+                  color: "#F4F6FA",
+                  mt: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  lineHeight: 1.7,
+                }}
+              >
+                <IconButton
+                  color="#FFD700"
+                  size="small"
+                  sx={{ alignSelf: "center" }}
+                >
+                  <LocationOnIcon sx={{ color: "#F1E8D8" }} />
+                </IconButton>
+                VILLA202-FIRST NEIGHBORHOOD - SEVENTH DISTRICT - SHEIKH ZAYED -
+                EGYPT
+              </Box>
+              <Box
+                variant="body2"
+                sx={{
+                  color: "#F4F6FA",
+                  mt: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  lineHeight: 1.7,
+                }}
+              >
+                <IconButton
+                  color="#FFD700"
+                  size="small"
+                  sx={{ alignSelf: "center" }}
+                >
+                  <AccessTimeFilledIcon sx={{ color: "#F1E8D8" }} />
+                </IconButton>
+                8:00 - 20:00, Sunday - Thursday
+              </Box>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              maxWidth: "100%",
+              justifyContent: "space-between",
+              alignItems: "start",
+              width: { xs: "100%", md: "49%" },
+              mt: { xs: 4, md: "0" },
+              mb: { xs: 3, md: "0" },
+            }}
+          >
+            <Box
+              sx={{
+                display: { xs: "flex", sm: "flex" },
+                flexDirection: "column",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: 1,
+              }}
+            >
               <Typography
                 variant="body2"
-                sx={{ color: "#F4F6FA", mb: 2, textAlign: "justify" }}
+                sx={{ color: "#F4F6FA", mb: 2, textAlign: "center" , fontSize : "30px" , fontWeight : "bold" }}
               >
-                Subscribe for weekly updates. No spams ever!
+                Join Us & Save!
               </Typography>
-              <InputLabel
-                htmlFor="email-newsletter"
-                sx={{ color: "#F4F6FA", textAlign: "justify" }}
+                            <Typography
+                variant="body2"
+                sx={{ color: "#F4F6FA", mb: 1, textAlign: "center" , fontSize : "20px" , fontWeight : "bold" }}
               >
-                Email
-              </InputLabel>
-              <Stack direction="row" spacing={1} useFlexGap>
+                Join our exclusive newsletter and be the first to know about new arrivals, special offers, and insider deals!
+              </Typography>
+
+                <Stack direction="row" spacing={1} useFlexGap sx={{flexDirection: { xs: "column", md: "row" },}}>
                 <TextField
                   id="email-newsletter"
                   hiddenLabel
@@ -155,305 +257,14 @@ export default function MyFooter() {
                   size="small"
                   sx={{
                     flexShrink: 0,
-                    backgroundColor: "black",
+                    backgroundColor: "#F1E8D8",
                     borderRadius: "12px",
+                    color: "black",
                   }}
                 >
                   Subscribe
                 </Button>
               </Stack>
-              <Box
-                variant="body2"
-                sx={{
-                  color: "#F4F6FA",
-                  mt: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  lineHeight: 1.7,
-                }}
-              >
-                <IconButton
-                  color="#FFD700"
-                  size="small"
-                  sx={{ alignSelf: "center" }}
-                >
-                  <EmailIcon sx={{ color: "#FFD700" }} />
-                </IconButton>
-                mohamed.saleh@siwagarden.com
-              </Box>
-              <Box
-                variant="body2"
-                sx={{
-                  color: "#F4F6FA",
-                  mt: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  lineHeight: 1.7,
-                }}
-              >
-                <IconButton
-                  color="#FFD700"
-                  size="small"
-                  sx={{ alignSelf: "center" }}
-                >
-                  <PhoneIcon sx={{ color: "#FFD700" }} />
-                </IconButton>
-                +20 111 991 9899 - +20 111 441 2223
-              </Box>
-              <Box
-                variant="body2"
-                sx={{
-                  color: "#F4F6FA",
-                  mt: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  lineHeight: 1.7,
-                }}
-              >
-                <IconButton
-                  color="#FFD700"
-                  size="small"
-                  sx={{ alignSelf: "center" }}
-                >
-                  <LocationOnIcon sx={{ color: "#FFD700" }} />
-                </IconButton>
-                VILLA202-FIRST NEIGHBORHOOD - SEVENTH DISTRICT - SHEIKH ZAYED -
-                EGYPT
-              </Box>
-              <Box
-                variant="body2"
-                sx={{
-                  color: "#F4F6FA",
-                  mt: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  lineHeight: 1.7,
-                }}
-              >
-                <IconButton
-                  color="#FFD700"
-                  size="small"
-                  sx={{ alignSelf: "center" }}
-                >
-                  <AccessTimeFilledIcon sx={{ color: "#FFD700" }} />
-                </IconButton>
-                8:00 - 20:00, Sunday - Thursday
-              </Box>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" },
-              maxWidth: "100%",
-              justifyContent: "space-between",
-              width: { xs: "100%", md: "49%" },
-              mt: { xs: 4, md: "auto" },
-              mb: { xs: 3, md: "auto" },
-            }}
-          >
-            <Box
-              sx={{
-                display: { xs: "flex", sm: "flex" },
-                flexDirection: "column",
-                alignItems: "flex-start",
-                flexWrap: "wrap",
-                gap: 1,
-              }}
-            >
-              <Typography
-                variant="h6"
-                sx={{ fontWeight: "bold", color: "White" }}
-              >
-                Help Center
-              </Typography>
-              <Box
-                sx={{
-                  display: { xs: "flex", sm: "flex" },
-                  flexDirection: { xs: "row", md: "column" },
-                  alignItems: "flex-start",
-                  flexWrap: "wrap",
-                  gap: 1,
-                  width: "100%",
-                }}
-              >
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Payments
-                </Link>
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Refund
-                </Link>
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Shipping
-                </Link>
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Q&A
-                </Link>
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Privacy Policy
-                </Link>
-              </Box>
-            </Box>
-            <Box
-              sx={{
-                display: { xs: "flex", sm: "flex" },
-                flexDirection: "column",
-                alignItems: "flex-start",
-                flexWrap: "wrap",
-                gap: 1,
-                mt: { xs: 2, md: "auto" },
-              }}
-            >
-              <Typography
-                variant="h6"
-                sx={{ fontWeight: "bold", color: "white" }}
-              >
-                Useful Links
-              </Typography>
-              <Box
-                sx={{
-                  display: { xs: "flex", sm: "flex" },
-                  flexDirection: { xs: "row", md: "column" },
-                  alignItems: "flex-start",
-                  flexWrap: "wrap",
-                  gap: 1,
-                  width: "100%",
-                }}
-              >
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  About Us
-                </Link>
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Blogs
-                </Link>
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Career
-                </Link>
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Our Teems
-                </Link>
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Help Center
-                </Link>
-              </Box>
-            </Box>
-            <Box
-              sx={{
-                display: { xs: "flex", sm: "flex" },
-                flexDirection: "column",
-                alignItems: "flex-start",
-                flexWrap: "wrap",
-                gap: 1,
-                mt: { xs: 2, md: "auto" },
-              }}
-            >
-              <Typography
-                variant="h6"
-                sx={{ fontWeight: "bold", color: "white" }}
-              >
-                Social Media
-              </Typography>
-              <Box
-                sx={{
-                  display: { xs: "flex", sm: "flex" },
-                  flexDirection: { xs: "row", md: "column" },
-                  alignItems: "flex-start",
-                  flexWrap: "wrap",
-                  gap: 1,
-                  width: "100%",
-                }}
-              >
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  About Us
-                </Link>
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Blogs
-                </Link>
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Career
-                </Link>
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Our Teems
-                </Link>
-                <Link
-                  color="#ffffff"
-                  variant="body1"
-                  href="#"
-                  sx={{ textDecoration: "none" }}
-                >
-                  Help Center
-                </Link>
-              </Box>
             </Box>
           </Box>
         </Box>
@@ -464,13 +275,13 @@ export default function MyFooter() {
             pt: { xs: 4, sm: 8 },
             width: "100%",
             borderTop: "1px solid",
-            borderColor: "divider",
+            borderColor: "white",
             flexDirection: { xs: "column", sm: "row" },
           }}
         >
           <div>
-            <Copyright />
-          </div>
+            <Copyright  />
+          </div> 
           <Stack
             direction="row"
             spacing={1}

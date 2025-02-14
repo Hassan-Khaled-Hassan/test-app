@@ -8,21 +8,14 @@ const MyAboutContent = ({data}) => {
   console.log(data);
   return (
     <Box sx={{ mt: 6 }}>
-      <Box sx={{ width: { xs: "96%", md: "85%" }, m: "auto" }}>
-        <MyHeaderTwo
-          part1={data.name}
-          name={data.Part}
-          link="/"
-          paragraphs={data.paragraphs}
-        />
-      </Box>
       <Container
         id="SignUp"
-        maxWidth="xl"
+        // maxWidth="xl"
         sx={{
           pt: { xs: 1, sm: 0 },
           pb: { xs: 1, sm: 0 },
           position: "relative",
+          maxWidth: "1250px !important",
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
@@ -32,10 +25,9 @@ const MyAboutContent = ({data}) => {
           paddingRight: "0px !important",
           paddingLeft: "0px !important",
           width: "100%",
-          m: 0,
+          m: "auto",
           mt: 6,
           mb: 6,
-
           // borderTop: "1px solid",
           // borderColor: "divider",
           bgcolor: "transparent",
@@ -59,9 +51,6 @@ const MyAboutContent = ({data}) => {
                 position: "absolute",
                 zIndex: -1,
                 inset: 0,
-                backgroundImage:
-                  "radial-gradient(ellipse at 50% 50%, hsl(210, 100%, 97%), hsl(0, 0%, 100%))",
-                backgroundRepeat: "no-repeat",
                 ...theme.applyStyles("dark", {
                   backgroundImage:
                     "radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%))",
@@ -71,20 +60,21 @@ const MyAboutContent = ({data}) => {
           ]}
         >
           <Stack
-            direction={{ xs: "column-reverse", md: "row" }}
+            direction={{ xs: "column", md: "row" }}
             sx={{
               justifyContent: "center",
-              gap: { xs: 6, sm: 3 },
+              gap: { xs: 2, sm: 3 },
               p: 0,
               mx: "auto",
               width: "100%",
             }}
           >
+            <SignInCard data={data} />
             <Box
               sx={{
                 display: { xs: "flex", md: "flex" },
-                width: { xs: "100%", md: "100%" },
-                height: { xs: "600px", md: "auto" },
+                width: { xs: "100%", md: "38%" },
+                height: { xs: "350px", md: "400px" },
                 maxHeight: "800px",
               }}
             >
@@ -93,7 +83,13 @@ const MyAboutContent = ({data}) => {
                 width={568}
                 height={466}
                 alt="Description"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "46px",
+                  padding: 8,
+                }}
               />
             </Box>
           </Stack>

@@ -19,7 +19,7 @@ const MyHomeCertificate = async (async) => {
         // borderRadius: "40px",
       }}
     >
-      <LogoCollection part1="Our" name= " Certificates" response={response.data.data}/>
+      <LogoCollection part1="Quality" name= " & Compliance Certifications" response={response.data.data}/>
     </Box>
   );
 }

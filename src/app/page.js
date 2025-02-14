@@ -4,11 +4,11 @@ import MyHomeCategory from "./Components/categories/MyHomeCategory";
 import HomePage from './Components/HomeSection/HomePage';
 import HomePageOne from './Components/HomeSection/HomePageOne';
 import MyHomeQuestions from "./Components/Questions/MyHomeQuestions";
-import MyHomeClients from "./Components/Clients/MyHomeClients";
+//import MyHomeClients from "./Components/Clients/MyHomeClients";
 import MySignUp from "./Components/Stories/MySignUp";
 import MyHomeCertificate from "./Components/Certificates/MyHomeClients";
 import MyHomeProducts from "./Components/ProductV2/MyHomeProducts";
-
+import HomePageTwo from './Components/HomeSection/HomePageTwo';
 
 
 export default async function Home() {
@@ -23,12 +23,12 @@ export default async function Home() {
   }
   return (
     <div>
-      {homeData != null ?<HomePage homeData = {homeData.homeVedioSize} /> : null}
-      {homeData != null ?<HomePageOne homeData = {homeData.homeVedioMobileSize }/>: null}
+      {homeData?.homeVedioSize?.link != "" && homeData?.homeVedioMobileSize?.link != "" ?<HomePage homeData = {homeData.homeVedioSize} /> : null}
+      {homeData?.homeVedioMobileSize?.link != "" ?<HomePageOne homeData = {homeData.homeVedioMobileSize }/>: null}
+      {homeData?.homeVedioSize?.link === "" && homeData?.homeVedioMobileSize?.link === "" ? <HomePageTwo/> : null}
+      <MyHomeCertificate/>
       <MyHomeProducts />
       <MySignUp/>
-      <MyHomeCertificate/>
-      <MyHomeClients/>
       <MyHomeQuestions/>
       <MyHomeCategory />
     </div>

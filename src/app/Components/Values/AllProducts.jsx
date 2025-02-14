@@ -153,7 +153,7 @@ export default function AllProducts({data}) {
                       fontSize: "22px",
                       fontWeight: "bold",
                       textAlign: "center",
-                      color: "#8B4513",
+                      color: "black",
                     }}
                   >
                     {item.name}

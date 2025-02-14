@@ -27,15 +27,14 @@ export default async function Page() {
       />
       <MyAboutContent data={data.aboutList?.[0] || {}} />
       {data.aboutList?.length > 1 ? (
-        data.aboutList
-          .slice(1)
-          .map((item, index) => <MyAboutList key={index} data={item} />)
+        data.aboutList.map((item, index) => (
+          <MyAboutList key={index} data={item} myIndex={index} />
+        ))
       ) : (
         <p>No additional list items available.</p>
       )}
       <MyHomeValue data={data.Values || []} />
       <MyHomeCertificate />
-      <MyHomeClients />
     </div>
   );
 }

@@ -47,7 +47,7 @@ export const useInsertDataWithImg = async (url, data) => {
     return {data : parsedData , status : response.status}; // Return the parsed data
   } catch (error) {
     console.error("Error in useInsertDataWithImg:", error);
-    throw error;
+    return { status: error.status, data: error.response.data };
   }
 };
 

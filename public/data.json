@@ -1,11 +1,19 @@
 {
   "aboutList": [
     {
+      "name": "Welcome",
+      "Part": " to Siwa Garden",
+      "image": "https://res.cloudinary.com/dsccvadus/image/upload/v1735663049/wznngs8waijadxme20sy.jpg",
+      "paragraphs": [
+        "Siwa Garden is a leading name in the food industry, dedicated to producing high-quality olive oil and canned foods. With a commitment to excellence, sustainability, and innovation, we ensure that our products meet the highest industry standards—both locally and internationally."
+      ]
+    },
+    {
       "name": "About",
       "Part": " Us",
       "image": "https://res.cloudinary.com/dsccvadus/image/upload/v1735663049/wznngs8waijadxme20sy.jpg",
       "paragraphs": [
-        "Siwa Garden thrives on transforming agricultural lands in Siwa into productive, thriving spaces. Our commitment to sustainable practices and innovative development sets us apart in the agricultural sector. We harness the unique characteristics of Siwa’s environment to create solutions that enhance productivity and sustainability, ensuring a bright future for local agriculture and the community."
+        "Siwa Garden thrives on transforming agricultural lands in Siwa into productive, thriving spaces. Our commitment to sustainable practices and innovative development sets us apart in the agricultural sector. We harness the unique characteristics of Siwa’s environment to create solutions that enhance productivity and sustainability, ensuring a bright future for local agriculture and the community."
       ]
     },
     {
@@ -14,7 +22,7 @@
       "image": "https://res.cloudinary.com/dsccvadus/image/upload/v1735663102/wiolsxqhstgbunw6jo4u.jpg",
       "paragraphs": [
         "Our Vision: Is to deliver a simple combination between serving fresh, healthy and tasty products of Quality packaged food in Egypt & International Markets",
-        "Our Mission: Is to make our food products the best favorable choice of families within our target profile. leveraging our expertise and resources with uncompromising dedication to efficiency, innovation, quality and service."
+        "Our Mission: Is to make our food products the best favorable choice of families within our target profile, leveraging our expertise and resources with uncompromising dedication to efficiency, innovation, quality, and service."
       ]
     },
     {
@@ -30,9 +38,9 @@
       "Part": " Goals",
       "image": "https://res.cloudinary.com/dsccvadus/image/upload/v1735663309/marrbxiic8t60ovi0wgu.jpg",
       "paragraphs": [
-        "To be the leading product of olive oil and olive  regionally in retail and the most preferred product worldwide in food service.",
-        "Increasing production capacity by buying more firms ,creating more factories and Relying on renewable energy in farms and factories and recycling industrial waste.",
-        "Establish more Products lines, with various range of healthy and distinguished products, that has no competitors when it comes to quality and taste."
+        "To be the leading product of olive oil and olive regionally in retail and the most preferred product worldwide in food service.",
+        "Increasing production capacity by buying more firms, creating more factories, and relying on renewable energy in farms and factories while recycling industrial waste.",
+        "Establish more product lines, with a various range of healthy and distinguished products, that have no competitors when it comes to quality and taste."
       ]
     }
   ],
@@ -55,9 +63,14 @@
     }
   ],
   "homeVedioSize": {
-    "link": "https://www.youtube.com/embed/ls8zSMK_RIw?rel=0&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&playlist=ls8zSMK_RIw"
+    "link": "",
+    "link2": "https://www.youtube.com/embed/ls8zSMK_RIw?rel=0&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&playlist=ls8zSMK_RIw"
   },
   "homeVedioMobileSize": {
-    "link": "https://www.youtube.com/embed/WHqA4S1I2ow?rel=0&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&playlist=WHqA4S1I2ow"
+    "link": "",
+    "link2": "https://www.youtube.com/embed/WHqA4S1I2ow?rel=0&autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&playlist=WHqA4S1I2ow"
+  },
+  "homePageImage": {
+    "link": "https://res.cloudinary.com/dsccvadus/image/upload/v1739468522/yxj8zyvmfvpytujz8t61.png"
   }
 }

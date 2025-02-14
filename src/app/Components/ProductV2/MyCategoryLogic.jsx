@@ -2,18 +2,17 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay ,Navigation } from "swiper/modules";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import Image from "next/image";
 import { Box, Typography } from "@mui/material";
 import MyCard from "./MyCard";
 
 const MyCategoryLogic = ({
-  imgUrls,
   swiperRef,
   setIsBeginning,
   setIsEnd,
-  num,
   response
 }) => {
   return (
@@ -27,27 +26,26 @@ const MyCategoryLogic = ({
         setIsEnd(swiper.isEnd);
       }}
       pagination={{ clickable: true }}
+      navigation={true}
       //   autoplay={{
       //     delay: 3000,
       //     disableOnInteraction: false,
       //     pauseOnMouseEnter: true,
       //   }} // Enables autoplay
-      modules={[Pagination, Autoplay]}
+      modules={[Pagination, Autoplay, Navigation]}
       spaceBetween={20}
       lazy="true"
       breakpoints={{
         200: { slidesPerView: 1 },
         600: { slidesPerView: 2 },
-        992: { slidesPerView: 4 },
+        1190: { slidesPerView: 3 },
       }}
-      preventClicks={false} // Ensures clicks are not blocked
-      preventClicksPropagation={false} // Prevents Swiper from interfering
       className="mySwiper"
     >
       {response.length > 0 ? (
         response.map((item, index) => (
           <SwiperSlide key={index}>
-            <MyCard item={item}/>
+            <MyCard item={item} />
           </SwiperSlide>
         ))
       ) : (

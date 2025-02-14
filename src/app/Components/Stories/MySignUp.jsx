@@ -7,7 +7,6 @@ import MyHeaderTwo from "@/app/Utils/MyHeaderTwo";
 const MySignUp = () => {
   return (
     <Box sx={{ mt: 6 }}>
-      <MyHeaderTwo part1="Success" name=" Stories" link="/" />
       <Container
         id="SignUp"
         maxWidth="xl"
@@ -28,7 +27,7 @@ const MySignUp = () => {
           mt: 6,
           // borderTop: "1px solid",
           // borderColor: "divider",
-          bgcolor: "#4CAF50",
+          bgcolor: "#4C6444",
         }}
       >
         <Stack
@@ -73,16 +72,16 @@ const MySignUp = () => {
             <SignInCard />
             <Box
               sx={{
-                display: { xs: "flex", md: "flex" },
-                width: { xs: "100%", md: "50%" },
-                height: { xs: "600px", md: "auto" },
-                maxHeight: "800px",
+                display: { xs: "none", md: "flex" },
+                width: { xs: "100%", md: "32%" },
+                height: { xs: "600px", md: "auto", lg: "610px" },
+                maxHeight: "832px",
               }}
             >
               <Image
                 src="https://res.cloudinary.com/dyunrntg7/image/upload/v1735564848/pexels-photo-6231906_qrnuxl.jpg"
                 width={568}
-                height={466}
+                height={366}
                 alt="Description"
                 style={{ width: "100%", height: "100%" }}
               />

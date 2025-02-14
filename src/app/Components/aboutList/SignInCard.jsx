@@ -18,76 +18,57 @@ const Card = styled(MuiCard)(({ theme }) => ({
   flexDirection: "column",
   alignSelf: "center",
   width: "100%",
-  padding: theme.spacing(4),
+  padding: theme.spacing(2),
   gap: theme.spacing(2),
-  border : "0px",
-  backgroundColor : "transparent",
-  boxShadow:
-    "0px",
+  border: "0px",
+  backgroundColor: "transparent",
+  boxShadow: "0px",
   [theme.breakpoints.up("sm")]: {
     width: "450px",
+    padding: theme.spacing(4),
   },
   ...theme.applyStyles("dark", {
     boxShadow:
       "hsla(220, 30%, 5%, 0.5) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.08) 0px 15px 35px -5px",
   }),
 }));
-export default function SignInCard() {
+export default function SignInCard({data }) {
 
   return (
     <Card
       variant="outlined"
       sx={{
         borderRadius: "15px",
-        width: { xs: "100%", md: "44% !important" },
+        width: { xs: "100%", md: "54% !important" },
         m: "auto",
       }}
     >
-
-          <Typography
-        component="h1"
-        variant="h4"
-        sx={{ width: "100%", fontSize: "clamp(2rem, 10vw, 2.15rem)" , mb:4  , textTransform : "capitalize" , color : "white"}}
-      >
-        Learn more about the oil making process with out guides.
-      </Typography>
-
       <Typography
         component="h1"
-        variant="body1"
-        sx={{ width: "100%", color: "white" }}
+        variant="h4"
+        sx={{
+          width: "100%",
+          fontSize: "40px",
+          mb: 3,
+          textTransform: "capitalize",
+          color: "#000000",
+          fontWeight: "bold",
+        }}
       >
-        Nile Garden’s factory, situated on the Alex Desert Road near Dina Farms,
-        boasts an advanced processing facility built to top food industry
-        standards. Featuring a cutting-edge laboratory for continuous innovation
-        and rigorous quality control, the factory has a current capacity of
-        10,000 tons of table olives, with plans to increase to 15,000 tons by
-        2025. This positions Nile Garden as a leading producer of olive oil and
-        canned foods, committed to high quality and professional service at
-        competitive costs.
+        {data.name} {data.Part}
       </Typography>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Button
-          sx={{
-            borderRadius: "16px",
-            p: ["10px 22px", "10px 30px"],
-            background: "transparent",
-            color: "white",
-            border: "2px solid white",
-            width: "195px",
-            fontWeight: "bold",
-            transition : "all 0.6s",
-            ":hover": {
-              background: "#8B4513",
-              color : "white",
-              // border : "0px"
-            },
-          }}
-          type="submit"
-        >
-          Read More
-        </Button>
-      </Box>
+      {data.paragraphs && data.paragraphs.length > 0
+        ? data.paragraphs.map((paragraph, index) => (
+            <Typography
+              component="h1"
+              variant="body1"
+              key={index}
+              sx={{ width: "100%", color: "#000000", fontSize: "20px" }}
+            >
+              {paragraph}
+            </Typography>
+          ))
+        : null}
     </Card>
   );
 }

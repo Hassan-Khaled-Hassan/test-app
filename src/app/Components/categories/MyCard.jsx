@@ -1,88 +1,67 @@
-import { Box, Paper, Typography,Button } from '@mui/material';
-import React from 'react'
-import SearchIcon from "@mui/icons-material/Search";
-const MyCard = ({item}) => {
+import { Box, Paper, Typography } from "@mui/material";
+import React from "react";
+
+const MyCard = ({ item }) => {
   return (
     <Paper
       component="div"
-      // maxWidth="sm"
       sx={{
-        backgroundColor: "#0E83AF",
-        backgroundImage:
-          `url('${item?.image?.url || ''}')`,
+        position: "relative",
+        backgroundImage: `url('${item?.image?.url || ""}')`,
         backgroundSize: "cover",
-        borderRadius: "10px",
-        filter: "brightness(0.8)",
-        // p: "160px 32px",
-        margin: "auto",
-        maxWidth: "460px",
+        backgroundPosition: "center",
+        borderRadius: "20px",
+        width: { xs: "90%", sm: "87%", md: "94%", lg: "375px" },
+        height: { xs: "300px", sm: "350px", md: "440px" },
+        m: "auto",
         cursor: "pointer",
+        overflow: "hidden",
         transition:
           "transform 0.3s ease, filter 0.3s ease , box-shadow 0.3s ease",
         "&:hover": {
-          transform: "scale(0.9)",
+          transform: "scale(0.95)",
           filter: "brightness(0.9)",
-          boxShadow: "0 20px 20px rgba(0, 0, 0, 0.2)",
+          boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
+        },
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background:
+            "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #000000 120%)",
         },
       }}
-      bgcolor="primary.light"
     >
       <Box
         sx={{
-          marginTop: 3,
+          position: "relative",
+          zIndex: 1,
           display: "flex",
           flexDirection: "column",
-          justifyContent : "center",
-          alignItems : "center", 
-          gap: "20px",
-                  height:"500px",
+          justifyContent: "flex-end",
+          alignItems: "center",
+          textAlign: "center",
+          height: "96%",
         }}
       >
-        <Box
+        <Typography
+          component="h1"
+          variant="h5"
           sx={{
-            marginTop: 0,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+            fontWeight: "bold",
+            color: "white",
+            fontSize: { xs: "22px", sm: "22px", md: "24px" },
+            p: "0px 22px",
           }}
         >
-          <Typography
-            component="h1"
-            variant="h4"
-            sx={{ textAlign: "center", fontWeight: "bold", color: "white" }}
-          >
-            {item.name}
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            marginTop: 0,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Button
-            variant="contained"
-            sx={{
-              borderRadius: "6px",
-              p: ["10px 22px", "10px 30px"], // Responsive padding values for mobile and larger screens
-              background: "#8B4513",
-              color: "#FFD700",
-              // boxShadow:
-              //   "6px -2px 30px 1px #CF77F3, -13px 7px 50px 1px #009BFF",
-              width: "190px",
-              fontSize: "20px",
-              textTransform: "capitalize",
-            }}
-            startIcon={<SearchIcon />}
-          >
-            Read more
-          </Button>
-        </Box>
+          {item.name}
+        </Typography>
       </Box>
     </Paper>
   );
-}
+};
 
-export default MyCard
+export default MyCard;

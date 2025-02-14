@@ -22,62 +22,82 @@ const MyCard = ({item}) => {
     setIsDragging(true); // Set dragging state when moving
   };
   return (
-               <Card
-              sx={{
-                maxWidth: { xs: "100%", sm: 345 },
-                borderRadius: "30px",
-                boxShadow: "none",
-              }}
-            >
-              <CardActionArea
-               onMouseDown={handleMouseDown}
-               onMouseMove={handleMouseMove}
-              onClick={handleClick}
-               sx={{ width: "100%", height: "100%" }}>
-                <Box
-                    sx={{
-                    width: "90%",
-                    backgroundColor: "transparent",
-                    borderRadius: "15px",
-                    p: "34px 10px",
-                    m: "auto",
-                  }}
-                >
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image={item.imageCover.url}
-                    alt="green iguana"
-                    sx={{
-                      width: "100%",
-                      margin: " auto",
-                      objectFit: "cover",
-                      height: "354px",
-                      // width : "253px",
-                    }}
-                  />
-                </Box>
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    sx={{
-                      display: "-webkit-box",
-                      WebkitLineClamp: 1, // Limit to one line
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis", // Add ellipsis for overflow
-                      fontSize: "16px",
-                      textAlign: "center",
-                      color: "#050430",
-                    }}
-                  >
-                    {item.name}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
+    <Card
+      sx={{
+        borderRadius: "30px",
+        width: { xs: "90%", sm: "87%", md: "94%", lg: "375px" },
+        boxShadow: "none",
+        border: "4px solid #4C6444",
+        m: "auto",
+        cursor: "pointer",
+        height : "570px",
+      }}
+    >
+      <CardActionArea
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onClick={handleClick}
+        sx={{ width: "100%", height: "100%" }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            backgroundColor: "transparent",
+            borderRadius: "15px",
+            p: "28px 10px 4px",
+            m: "auto",
+          }}
+        >
+          <CardMedia
+            component="img"
+            height="140"
+            image={item?.image?.url || ""}
+            alt="green iguana"
+            sx={{
+              width: "80%",
+              margin: " auto",
+              objectFit: "cover",
+              height: "100%",
+              // width : "253px",
+            }}
+          />
+        </Box>
+        <CardContent>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{
+              display: "-webkit-box",
+              WebkitLineClamp: 1, // Limit to one line
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              textOverflow: "ellipsis", // Add ellipsis for overflow
+              fontSize: "40px",
+              textAlign: "center",
+              color: "black",
+              fontWeight: "bold",
+            }}
+          >
+            {item.name}
+          </Typography>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{
+              display: "flex",
+              fontSize: "22px",
+              textAlign: "center",
+              color: "#696969",
+              fontWeight: "600",
+            }}
+          >
+            {item.description}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   );
 }
 

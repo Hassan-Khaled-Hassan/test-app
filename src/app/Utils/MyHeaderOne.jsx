@@ -30,42 +30,20 @@ const MyHeaderOne = ({
       sx={{
         display: "flex",
         flexDirection: { xs: "row", sm: "row" },
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
         width: { xs: "98%", sm: "96%" },
         margin: "10px auto",
         padding: "0 1%",
       }}
     >
-      <Box
-        sx={{
-          mt: "15px",
-          fontSize: "25px",
-          fontWeight: "bold",
-          color: "black",
-          display: { xs: "block", sm: "block" },
-        }}
-      >
-        <IconButton
-          size="large"
-          aria-label="previous slide"
-          color="inherit"
-          sx={buttonStyles}
-          onClick={() => swiperRef?.current?.slidePrev()}
-          disabled={isBeginning}
-        >
-          <KeyboardDoubleArrowLeftIcon
-            sx={{ fontSize: "25px", fontWeight: "bold" }}
-          />
-        </IconButton>
-      </Box>
       <Link href={link} passHref style={{textDecoration : "none"}}>
         <Box
           sx={{
             mt: "15px",
             fontSize: { xs: "26px", sm: "40px" },
             fontWeight: "bold",
-            color: "#050430",
+            color: "#4C6444",
           }}
           aria-label={`Go to ${name}`}
         >
@@ -73,27 +51,6 @@ const MyHeaderOne = ({
           {name}
         </Box>
       </Link>
-      <Box
-        sx={{
-          mt: "15px",
-          fontSize: "25px",
-          fontWeight: "bold",
-          color: "black",
-        }}
-      >
-        <IconButton
-          size="large"
-          aria-label="next slide"
-          color="inherit"
-          sx={buttonStyles}
-          onClick={() => swiperRef?.current?.slideNext()}
-          disabled={isEnd}
-        >
-          <KeyboardDoubleArrowRightIcon
-            sx={{ fontSize: "25px", fontWeight: "bold" }}
-          />
-        </IconButton>
-      </Box>
     </Box>
   );
 };

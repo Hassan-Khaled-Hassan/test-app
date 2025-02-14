@@ -23,32 +23,34 @@ import { usePathname } from "next/navigation";
 import { useMediaQuery } from "@mui/material";
 const CssTextField = styled(TextField)(({ theme }) => ({
   "& label": {
-    color: "#B5B5B5",
+    color: "red",
   },
   "& label.Mui-focused": {
     color: "#9D7D43",
   },
   "& .MuiInput-underline:after": {
     borderBottomColor: "yellow",
-    backgroundColor: "white",
+    // backgroundColor: "white",
   },
   "& .MuiOutlinedInput-root": {
+    backgroundColor: "white",
+    borderRadius: "30px",
     "& fieldset": {
-      borderColor: "black",
+      borderColor: "white",
       borderWidth: "3px",
       borderRadius: "30px",
-      //  backgroundColor: "white",
+      backgroundColor: "transparent",
       color: "red !important",
     },
     "&:hover fieldset": {
-      borderColor: "black",
-      // backgroundColor: "white",
+      borderColor: "white",
+      backgroundColor: "transparent",
     },
     "&.Mui-focused fieldset": {
-      borderColor: "black",
+      borderColor: "white",
       borderWidth: "3px",
       borderRadius: "30px",
-      // backgroundColor: "white",
+      backgroundColor: "transparent",
     },
   },
 }));
@@ -81,7 +83,7 @@ export default function PrimarySearchAppBar() {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: "white",
+          backgroundColor: "#4C6444",
           paddingRight: "0px !important",
           zIndex: "1200",
 
@@ -99,7 +101,7 @@ export default function PrimarySearchAppBar() {
           }),
         }}
       >
-        <Container maxWidth="xl">
+        <Container sx={{maxWidth : "1324px !important"}}>
           <Toolbar
             sx={{
               padding: "0px 6px !important",
@@ -113,12 +115,12 @@ export default function PrimarySearchAppBar() {
               }}
             >
               <Image
-                src="https://res.cloudinary.com/dsccvadus/image/upload/v1737579464/siwa_logo-removebg-preview_lgwpwx.png"
-                width={400}
-                height={200}
+                src="https://res.cloudinary.com/dsccvadus/image/upload/v1739444892/i0tx8doibxcus7cjkujx.png"
+                width={150}
+                height={85}
                 style={{
                   maxWidth: "100%",
-                  height: "auto", // for responsive height
+                  // height: "auto", // for responsive height
                   // maxHeight: "100px", // limit the height to your requirement
                   margin: "10px 3px",
                   mr: "15px",
@@ -131,9 +133,9 @@ export default function PrimarySearchAppBar() {
               sx={{
                 flexGrow: 1,
                 display: isMobile ? "none" : "flex",
-                ml: !isBig ? 4 : !isMobile ? 1 : "auto",
-                mt: "49px",
-                justifyContent: "center",
+                mr: 1,
+                // mt: "49px",
+                justifyContent: "end",
               }}
             >
               {pages.map((page) => (
@@ -146,7 +148,7 @@ export default function PrimarySearchAppBar() {
                     // onClick={handleCloseNavMenu}
                     sx={{
                       my: 2,
-                      color: pathname === page.to ? "#8B4513" : "#92929D",
+                      color: pathname === page.to ? "#F1E8D8" : "white",
                       display: "block",
                       transition: "color 0.6s ease",
                       textTransform: "capitalize",
@@ -154,7 +156,7 @@ export default function PrimarySearchAppBar() {
                       fontWeight: "bold",
                       "&:hover": {
                         backgroundColor: "transparent", // Sets the background color to red on hover
-                        color: "#8B4513",
+                        color: "#F1E8D8",
                       },
                     }}
                   >
@@ -173,7 +175,7 @@ export default function PrimarySearchAppBar() {
             <Box
               sx={{
                 maxWidth: "200px",
-                mt: !isMobile ? "46px" : "0px",
+                // mt: !isMobile ? "46px" : "0px",
               }}
             >
               <CssTextField
@@ -196,7 +198,7 @@ export default function PrimarySearchAppBar() {
                           marginBottom: "1px",
                           marginRight: "-6px",
                           p: "6px",
-                          color: "#8B4513",
+                          color: "#4C6444",
                           "&:hover": { backgroundColor: "transparent" },
                         }}
                       >
@@ -218,7 +220,8 @@ export default function PrimarySearchAppBar() {
                 sx={{
                   mr: 1,
                   marginLeft: isSmall && !isSmallMobile ? 0 : 1,
-                  fontSize: "30px",
+                  fontSize: "40px",
+                  color: "#FFFFFF",
                   // display: screenWidth <= 992 ? "block" : "none",
                   // ...(isDrawerOpen && { display: "none" }),
                 }}

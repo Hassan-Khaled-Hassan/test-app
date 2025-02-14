@@ -1,6 +1,7 @@
 "use server"
 import MyHomeProduct from "@/app/Components/aboutIntro/MyHomeProduct";
 import SignInSide from "@/app/Components/ContactUs/SignInSide";
+import MyHomeQuestions from "./Components/Questions/MyHomeQuestions";
 
 export default async function Page() {
   return (
@@ -11,6 +12,7 @@ export default async function Page() {
         name={"Contact Us"}
       />
       <SignInSide/>
+      <MyHomeQuestions/>
     </div>
   );
 }

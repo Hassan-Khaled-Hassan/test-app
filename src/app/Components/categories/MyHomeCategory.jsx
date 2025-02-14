@@ -16,7 +16,7 @@ const MyHomeCategory = async () => {
         pt: 4,
         pb: 2,
         position: "relative",
-        bgcolor: "#F5F5DC",
+        bgcolor: "white",
         borderRadius: "0px",
       }}
     >

@@ -21,8 +21,8 @@ export default function LogoCollection({ name , part1 , response }) {
         sx={{
           mt: "15px",
           fontSize: "40px",
-          fontWeight: "bold",
-          color: "#050430",
+          fontWeight: "700",
+          color: "#4C6444",
           textAlign: "center",
         }}
       >
@@ -31,7 +31,13 @@ export default function LogoCollection({ name , part1 , response }) {
       </Box>
       <Grid
         container
-        sx={{ justifyContent: "center", mt: { xs: 2, md: 4 }, opacity: 1 , alignItems : "center" , flexDirection : {xs : "column" , sm : "row"} }}
+        sx={{
+          justifyContent: "center",
+          mt: { xs: 2, md: 4 },
+          opacity: 1,
+          alignItems: "center",
+          flexDirection: { xs: "column", sm: "row" },
+        }}
       >
         {response.map((logo, index) => (
           <Grid item key={index}>

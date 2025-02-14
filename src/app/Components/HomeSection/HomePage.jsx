@@ -6,7 +6,7 @@ const HomePage = ({homeData}) => {
   return (
     <Box
       sx={{
-        marginTop: { xs: 12, lg: 15 },
+        marginTop: { xs: 12, lg: 13 },
         display: { xs: "none", md: "block" },
       }}
     >
