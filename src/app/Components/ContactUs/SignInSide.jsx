@@ -15,7 +15,7 @@ export default function SignInSide() {
           height: "calc((1 - var(--template-frame-height, 0)) * 100%)",
           marginTop: "max(40px - var(--template-frame-height, 0px), 0px)",
           minHeight: "100%",
-          mb:18,
+          mb:2,
         },
         (theme) => ({
           "&::before": {

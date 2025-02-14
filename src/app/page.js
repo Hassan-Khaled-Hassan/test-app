@@ -3,7 +3,6 @@ import axios from "axios";
 import MyHomeCategory from "./Components/categories/MyHomeCategory";
 import HomePage from './Components/HomeSection/HomePage';
 import HomePageOne from './Components/HomeSection/HomePageOne';
-import MyHomeQuestions from "./Components/Questions/MyHomeQuestions";
 //import MyHomeClients from "./Components/Clients/MyHomeClients";
 import MySignUp from "./Components/Stories/MySignUp";
 import MyHomeCertificate from "./Components/Certificates/MyHomeClients";
@@ -29,7 +28,6 @@ export default async function Home() {
       <MyHomeCertificate/>
       <MyHomeProducts />
       <MySignUp/>
-      <MyHomeQuestions/>
       <MyHomeCategory />
     </div>
   );

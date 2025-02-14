@@ -17,7 +17,7 @@ const Card = styled(MuiCard)(({ theme }) => ({
   width: "100%",
   padding: theme.spacing(4),
   gap: theme.spacing(2),
-  backgroundColor : "#F5F5DC",
+  backgroundColor : "#F1E8D8",
   borderRadius : "25px",
   boxShadow:
     "hsla(220, 30%, 5%, 0.05) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.05) 0px 15px 35px -5px",
@@ -189,7 +189,7 @@ export default function SignInCard() {
           type="submit"
           variant="contained"
           sx={{
-            backgroundColor: "#8B4513",
+            backgroundColor: "#4C6444",
             color: "white",
             borderRadius: "15px",
             width: { xs: "80%", sm: "50%" },

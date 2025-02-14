@@ -25,7 +25,7 @@ export default async function Page() {
         electronics={{ label: "About US" }}
         name={"About"}
       />
-      <MyAboutContent data={data.aboutList?.[0] || {}} />
+
       {data.aboutList?.length > 0 ? (
         data.aboutList.map((item, index) => (
           <MyAboutList key={index} data={item} myIndex={index} />

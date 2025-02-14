@@ -44,7 +44,20 @@ export default function AllQuestions() {
           fontSize: "32px",
         }}
       >
-        FAQ
+        FAQs
+      </Typography>
+      <Typography
+        component="h2"
+        variant="h4"
+        sx={{
+          color: "#050430",
+          width: { sm: "100%", md: "60%" },
+          textAlign: { sm: "center", md: "center" },
+          // fontWeight: "bold",
+          fontSize: "25px",
+        }}
+      >
+        Got questions? We've got answers! Check out our FAQs for quick solutions to common queries.
       </Typography>
       <Box sx={{ width: "100%" }}>
         <Accordion
@@ -65,7 +78,12 @@ export default function AllQuestions() {
             }
             aria-controls="panel1d-content"
             id="panel1d-header"
-            sx={{ fontWeight: "bold", color: "black" , border : "4px solid #4C6444" ,  borderRadius: "24px", }}
+            sx={{
+              fontWeight: "bold",
+              color: "black",
+              border: "4px solid #4C6444",
+              borderRadius: "24px",
+            }}
           >
             <Typography
               component="span"
@@ -120,7 +138,12 @@ export default function AllQuestions() {
             }
             aria-controls="panel1d-content"
             id="panel1d-header"
-            sx={{ fontWeight: "bold", color: "black" , border : "4px solid #4C6444" ,  borderRadius: "24px", }}
+            sx={{
+              fontWeight: "bold",
+              color: "black",
+              border: "4px solid #4C6444",
+              borderRadius: "24px",
+            }}
           >
             <Typography
               component="span"
@@ -175,7 +198,12 @@ export default function AllQuestions() {
             }
             aria-controls="panel1d-content"
             id="panel1d-header"
-            sx={{ fontWeight: "bold", color: "black" , border : "4px solid #4C6444" ,  borderRadius: "24px", }}
+            sx={{
+              fontWeight: "bold",
+              color: "black",
+              border: "4px solid #4C6444",
+              borderRadius: "24px",
+            }}
           >
             <Typography
               component="span"
@@ -230,7 +258,12 @@ export default function AllQuestions() {
             }
             aria-controls="panel1d-content"
             id="panel1d-header"
-            sx={{ fontWeight: "bold", color: "black" , border : "4px solid #4C6444" ,  borderRadius: "24px", }}
+            sx={{
+              fontWeight: "bold",
+              color: "black",
+              border: "4px solid #4C6444",
+              borderRadius: "24px",
+            }}
           >
             <Typography
               component="span"
