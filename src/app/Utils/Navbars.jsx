@@ -28,7 +28,7 @@ const CssTextField = styled(TextField)(({ theme }) => ({
   "& label.Mui-focused": {
     color: "#9D7D43",
   },
-  "& .MuiInput-underline:after": {
+  "& .MuiInput-underline:after": { 
     borderBottomColor: "yellow",
     // backgroundColor: "white",
   },
@@ -59,9 +59,8 @@ const pages = [
   { id: 2, name: "About", to: "/About-Us" },
   { 
     id: 3,
-     name: "Products",
-      // to: "/Products" 
-      to: "#" 
+    name: "Products",
+    to: "/Products" 
   },
   { id: 4, name: "Success Stories", to: "/Stories" },
   { id: 5, name: "Blogs", to: "/Blogs" },
@@ -115,7 +114,7 @@ export default function PrimarySearchAppBar() {
               }}
             >
               <Image
-                src="https://res.cloudinary.com/dsccvadus/image/upload/v1739444892/i0tx8doibxcus7cjkujx.png"
+                src="https://res.cloudinary.com/dsccvadus/image/upload/v1739917370/cbe00841-c3be-475d-85d2-db7e373e3b81_ksmdbx.png"
                 width={150}
                 height={85}
                 style={{

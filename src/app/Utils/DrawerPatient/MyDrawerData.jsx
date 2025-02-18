@@ -34,8 +34,8 @@ var array1 = [
   { 
     id: 3,
     name: "Products",
-    // link: "/Products",
-    link: "#",
+    link: "/Products",
+    // link: "#",
     icon: <InventoryIcon /> 
   },
   { id: 4, name: "Success Stories", link: "/Stories", icon: <AutoStoriesIcon /> },
@@ -107,7 +107,7 @@ const isMobile = useMediaQuery(theme.breakpoints.down("mmd"));
             </IconButton>
           </DrawerHeader>
           <Image
-            src="https://res.cloudinary.com/dsccvadus/image/upload/v1739444892/i0tx8doibxcus7cjkujx.png"
+            src="https://res.cloudinary.com/dsccvadus/image/upload/v1739917370/cbe00841-c3be-475d-85d2-db7e373e3b81_ksmdbx.png"
             width={400}
             height={200}
             style={{

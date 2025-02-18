@@ -2,11 +2,13 @@
 import MyHomeProduct from "@/app/Components/aboutIntro/MyHomeProduct";
 import MyProductsCat from "@/app/Components/ProductsCat/MyProductsCat";
 
-
-export default async function Page() {
+const Page = ({ params }) => {
+  const { id } = params;
   return (
     <div>
-      <MyProductsCat  />
+      <MyProductsCat id={id} />
     </div>
   );
-}
+};
+
+export default Page;

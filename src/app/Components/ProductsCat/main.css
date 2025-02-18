@@ -1,5 +1,5 @@
-.css-e1cgo6-MuiListItemText-root .css-rizt0-MuiTypography-root {
-    font-size: 22px !important;
+.MuiListItemText-root .MuiTypography-root {
+    font-size: 18px !important;
     font-weight: bold !important
 }
 
@@ -8,8 +8,8 @@
     font-weight: bold !important
 }
 
-.css-16mmgyz-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected, .css-4c65qs.Mui-selected {
-    background-color: #4CAF50 !important;
+.MuiButtonBase-root.MuiPaginationItem-root.Mui-selected, .css-4c65qs.Mui-selected {
+    background-color: #4C6444 !important;
     color: white !important;
 }
 
@@ -20,5 +20,14 @@
 
 .css-iu6syc .css-fyswvn {
     font-size: 20px !important;
-    font-weight: bold !important
+    font-weight: bold !important;
+}
+
+.MuiDialog-container .MuiPaper-root {
+    border: 6px solid #4C6444 !important;
+    border-radius: 35px  !important;
+    -webkit-border-radius: 35px  !important;
+    -moz-border-radius: 35px  !important;
+    -ms-border-radius: 35px  !important;
+    -o-border-radius: 35px  !important;
 }
