@@ -61,7 +61,7 @@ export default function AllProducts({response}) {
             key={index}
             sx={{ display: "flex", justifyContent: "center" }}
           >
-            <Link href={`/Blogs/BlogDetails/${testimonial.id}`}>
+            <Link href={`/Blogs/BlogDetails/${testimonial.id}`} style={{width : "100%"}}>
               <Paper
                 component="div"
                 // maxWidth="sm"
@@ -71,7 +71,7 @@ export default function AllProducts({response}) {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   borderRadius: "20px",
-                  width: { xs: "90%", sm: "96%", md: "94%", lg: "375px" },
+                  width: { xs: "92%", sm: "96%", md: "94%", lg: "375px" },
                   height: { xs: "300px", sm: "350px", md: "440px" },
                   m: "auto",
                   cursor: "pointer",
