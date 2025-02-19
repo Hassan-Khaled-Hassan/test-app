@@ -115,7 +115,7 @@ export default function SignInCard({response}) {
             color: "#050430",
           }}
         >
-          {response.description} Here are some standout benefits:
+          {response.description} {response?.Benefits?.length > 0 && response?.Benefits[0]?.head !== "" && response?.Benefits[0]?.body !== "" ? "Here are some standout benefits:" : null}
         </Box>
         {response?.Benefits?.length > 0 && (
           <Box
