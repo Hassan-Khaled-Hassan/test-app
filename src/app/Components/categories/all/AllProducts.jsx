@@ -6,106 +6,7 @@ import MyHeaderTwo from "@/app/Utils/MyHeaderTwo";
 import SearchIcon from "@mui/icons-material/Search";
 import { Box, Paper, Typography, Button, Avatar , Container } from "@mui/material";
 import Link from "next/link";
-const userTestimonials = [
-  {
-    avatar: <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />,
-    name: "Remy Sharp",
-    occupation: "Senior Engineer",
-    testimonial:
-      "I absolutely love how versatile this product is! Whether I'm tackling work projects or indulging in my favorite hobbies, it seamlessly adapts to my changing needs. Its intuitive design has truly enhanced my daily routine, making tasks more efficient and enjoyable.",
-  },
-  {
-    avatar: <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />,
-    name: "Travis Howard",
-    occupation: "Lead Product Designer",
-    testimonial:
-      "One of the standout features of this product is the exceptional customer support. In my experience, the team behind this product has been quick to respond and incredibly helpful. It's reassuring to know that they stand firmly behind their product.",
-  },
-  {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />,
-    name: "Cindy Baker",
-    occupation: "CTO",
-    testimonial:
-      "The level of simplicity and user-friendliness in this product has significantly simplified my life. I appreciate the creators for delivering a solution that not only meets but exceeds user expectations.",
-  },
-  {
-    avatar: <Avatar alt="Remy Sharp" src="/static/images/avatar/4.jpg" />,
-    name: "Julia Stewart",
-    occupation: "Senior Engineer",
-    testimonial:
-      "I appreciate the attention to detail in the design of this product. The small touches make a big difference, and it's evident that the creators focused on delivering a premium experience.",
-  },
-  {
-    avatar: <Avatar alt="Travis Howard" src="/static/images/avatar/5.jpg" />,
-    name: "John Smith",
-    occupation: "Product Designer",
-    testimonial:
-      "I've tried other similar products, but this one stands out for its innovative features. It's clear that the makers put a lot of thought into creating a solution that truly addresses user needs.",
-  },
-  {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/6.jpg" />,
-    name: "Daniel Wolf",
-    occupation: "CDO",
-    testimonial:
-      "The quality of this product exceeded my expectations. It's durable, well-designed, and built to last. Definitely worth the investment!",
-  },
-  {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/6.jpg" />,
-    name: "Daniel Wolf",
-    occupation: "CDO",
-    testimonial:
-      "The quality of this product exceeded my expectations. It's durable, well-designed, and built to last. Definitely worth the investment!",
-  },
-  {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/6.jpg" />,
-    name: "Daniel Wolf",
-    occupation: "CDO",
-    testimonial:
-      "The quality of this product exceeded my expectations. It's durable, well-designed, and built to last. Definitely worth the investment!",
-  },
-  {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/6.jpg" />,
-    name: "Daniel Wolf",
-    occupation: "CDO",
-    testimonial:
-      "The quality of this product exceeded my expectations. It's durable, well-designed, and built to last. Definitely worth the investment!",
-  },
-  {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/6.jpg" />,
-    name: "Daniel Wolf",
-    occupation: "CDO",
-    testimonial:
-      "The quality of this product exceeded my expectations. It's durable, well-designed, and built to last. Definitely worth the investment!",
-  },
-  {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/6.jpg" />,
-    name: "Daniel Wolf",
-    occupation: "CDO",
-    testimonial:
-      "The quality of this product exceeded my expectations. It's durable, well-designed, and built to last. Definitely worth the investment!",
-  },
-  {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/6.jpg" />,
-    name: "Daniel Wolf",
-    occupation: "CDO",
-    testimonial:
-      "The quality of this product exceeded my expectations. It's durable, well-designed, and built to last. Definitely worth the investment!",
-  },
-  {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/6.jpg" />,
-    name: "Daniel Wolf",
-    occupation: "CDO",
-    testimonial:
-      "The quality of this product exceeded my expectations. It's durable, well-designed, and built to last. Definitely worth the investment!",
-  },
-  {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/6.jpg" />,
-    name: "Daniel Wolf",
-    occupation: "CDO",
-    testimonial:
-      "The quality of this product exceeded my expectations. It's durable, well-designed, and built to last. Definitely worth the investment!",
-  },
-];
+
 
 const whiteLogos = [
   "https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/6560628e8573c43893fe0ace_Sydney-white.svg",
@@ -137,15 +38,19 @@ export default function AllProducts({response}) {
   return (
     <Container
       id="testimonials"
-      maxWidth="lg"
+      // maxWidth="lg"
       sx={{
         pt: { xs: 4, sm: 12 },
         pb: { xs: 8, sm: 16 },
         position: "relative",
+        maxWidth: "1186px !important",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: { xs: 3, sm: 6 },
+        gap: { xs: 3, sm: "2px" },
+        flexGrow: 1,
+        paddingRight: "0px !important",
+        paddingLeft: "0px !important",
       }}
     >
       <MyHeaderTwo part1="Our" name=" Blogs" link="/" />
@@ -161,82 +66,59 @@ export default function AllProducts({response}) {
                 component="div"
                 // maxWidth="sm"
                 sx={{
-                  backgroundColor: "#0E83AF",
-                  backgroundImage:
-                    `url('${testimonial.image.url}')`,
+                  position: "relative",
+                  backgroundImage: `url('${testimonial?.image?.url || ""}')`,
                   backgroundSize: "cover",
-                  borderRadius: "10px",
-                  filter: "brightness(0.8)",
-                  p: "110px 32px",
-                  margin: "auto",
-                  maxWidth: "460px",
+                  backgroundPosition: "center",
+                  borderRadius: "20px",
+                  width: { xs: "90%", sm: "87%", md: "94%", lg: "375px" },
+                  height: { xs: "300px", sm: "350px", md: "440px" },
+                  m: "auto",
                   cursor: "pointer",
+                  overflow: "hidden",
                   transition:
                     "transform 0.3s ease, filter 0.3s ease , box-shadow 0.3s ease",
                   "&:hover": {
-                    transform: "scale(0.9)",
+                    transform: "scale(0.95)",
                     filter: "brightness(0.9)",
-                    boxShadow: "0 20px 20px rgba(0, 0, 0, 0.2)",
+                    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
+                  },
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    background:
+                      "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #000000 120%)",
                   },
                 }}
-                bgcolor="primary.light"
               >
                 <Box
                   sx={{
-                    marginTop: 3,
+                    position: "relative",
+                    zIndex: 1,
                     display: "flex",
                     flexDirection: "column",
-                    gap: "20px",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    textAlign: "center",
+                    height: "96%",
                   }}
                 >
-                  <Box
+                  <Typography
+                    component="h1"
+                    variant="h4"
                     sx={{
-                      marginTop: 0,
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
+                      fontWeight: "bold",
+                      color: "white",
+                      fontSize: { xs: "22px", sm: "22px", md: "24px" },
+                      p: "0px 22px",
                     }}
                   >
-                    <Typography
-                      component="h1"
-                      variant="h4"
-                      sx={{
-                        textAlign: "center",
-                        fontWeight: "bold",
-                        color: "white",
-                        fontSize: "21px",
-                      }}
-                    >
-                      {testimonial.name}
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      marginTop: 0,
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Button
-                      variant="contained"
-                      sx={{
-                        borderRadius: "6px",
-                        p: ["10px 22px", "10px 30px"], // Responsive padding values for mobile and larger screens
-                        background: "#8B4513",
-                        color: "#FFD700",
-                        fontWeight: "bold",
-                        // boxShadow:
-                        //   "6px -2px 30px 1px #CF77F3, -13px 7px 50px 1px #009BFF",
-                        width: "230px",
-                        fontSize: "20px",
-                        textTransform: "capitalize",
-                      }}
-                      startIcon={<SearchIcon />}
-                    >
-                      Read more
-                    </Button>
-                  </Box>
+                    {testimonial.name}
+                  </Typography>
                 </Box>
               </Paper>
             </Link>
