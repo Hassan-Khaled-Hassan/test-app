@@ -42,10 +42,13 @@ const MyProductsCat = async ({ id }) => {
     Categories = { data: [] }; // Fallback data
   }
 
-  const selectedCategory = Categories?.data?.data?.find(
-    (category) => category.id === Number(id)
-  );
-
+  let selectedCategory = null;
+  if (!Number.isNaN(Number(id))) {
+    selectedCategory = Categories?.data?.find(
+      (category) => category.id === Number(id)
+    );
+  }
+    // console.error("selectedCategory: ", selectedCategory);
   return (
     <Box
       sx={{
