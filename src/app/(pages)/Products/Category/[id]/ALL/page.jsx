@@ -1,5 +1,4 @@
 "use server";
-import MyHomeProduct from "@/app/Components/aboutIntro/MyHomeProduct";
 import MyProductsCat from "@/app/Components/ProductsCat/MyProductsCat";
 
 const Page = ({ params }) => {
