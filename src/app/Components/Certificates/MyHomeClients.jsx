@@ -9,6 +9,7 @@ const MyHomeCertificate = async (async) => {
   const response = await axios.get(
     `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Certification/Certifications`
   );
+  // display data
   return (
     <Box
       sx={{
