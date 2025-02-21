@@ -67,7 +67,7 @@ export default function SignInCard() {
         standards. Featuring a cutting-edge laboratory for continuous innovation
         and rigorous quality control, the factory has a current capacity of
         10,000 tons of table olives, with plans to increase to 15,000 tons by
-        2025. This positions Nile Garden as a leading producer of olive oil and
+        2025. This positions Siwa Garden as a leading producer of olive oil and
         canned foods, committed to high quality and professional service at
         competitive costs.
       </Typography>

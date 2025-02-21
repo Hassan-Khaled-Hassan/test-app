@@ -83,7 +83,7 @@ export default function AllProducts({data}) {
         name=" Products"
         link="/"
         paragraphs={[
-          "At Nile Garden, our values guide everything we do. They are the foundation of our commitment to excellence and our dedication to delivering the best possible products to our customers.",
+          "At Siwa Garden, our values guide everything we do. They are the foundation of our commitment to excellence and our dedication to delivering the best possible products to our customers.",
         ]}
       />
       <Grid container spacing={2} sx={{ width: "100%" }}>
