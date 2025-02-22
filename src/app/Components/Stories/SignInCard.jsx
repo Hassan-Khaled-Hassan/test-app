@@ -48,7 +48,7 @@ export default function SignInCard() {
         variant="h4"
         sx={{
           width: "100%",
-          fontSize: {xs : "24px",md : "34px"},
+          fontSize: { xs: "24px", md: "34px" },
           mb: 4,
           textTransform: "capitalize",
           color: "white",
@@ -60,7 +60,12 @@ export default function SignInCard() {
       <Typography
         component="h1"
         variant="body1"
-        sx={{ width: "100%", color: "white" , fontSize : {xs : "18px",md : "25px"} , textAlign : "justify" }}
+        sx={{
+          width: "100%",
+          color: "white",
+          fontSize: { xs: "18px", md: "25px" },
+          textAlign: "justify",
+        }}
       >
         Siwa Garden’s factory, situated on the Alex Desert Road near Dina Farms,
         boasts an advanced processing facility built to top food industry
@@ -71,7 +76,9 @@ export default function SignInCard() {
         canned foods, committed to high quality and professional service at
         competitive costs.
       </Typography>
-      <Box sx={{ display: "flex", justifyContent: {xs:"center",sm:"start"} }}>
+      <Box
+        sx={{ display: "flex", justifyContent: { xs: "center", sm: "start" } }}
+      >
         <Link href="/Stories">
           <Button
             sx={{
