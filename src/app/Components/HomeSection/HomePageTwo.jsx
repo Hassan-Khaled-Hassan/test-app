@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Box,Typography,Button,Stack, useMediaQuery, useTheme } from "@mui/material";
-
+import Link from "next/link";
 const HomePageTwo = ({homeData}) => {
   return (
     <Box
@@ -77,25 +77,27 @@ const HomePageTwo = ({homeData}) => {
               justifyContent: { xs: "center", sm: "start" },
             }}
           >
-            <Button
-              sx={{
-                borderRadius: "16px",
-                p: ["10px 22px", "15px 30px"],
-                background: "#F1E8D8",
-                color: "#000000",
-                width: "195px",
-                fontWeight: "bold",
-                transition: "all 0.6s",
-                ":hover": {
+            <Link href="/About-Us">
+              <Button
+                sx={{
+                  borderRadius: "16px",
+                  p: ["10px 22px", "15px 30px"],
                   background: "#F1E8D8",
                   color: "#000000",
-                  // border : "0px"
-                },
-              }}
-              type="submit"
-            >
-              Know More
-            </Button>
+                  width: "195px",
+                  fontWeight: "bold",
+                  transition: "all 0.6s",
+                  ":hover": {
+                    background: "#F1E8D8",
+                    color: "#000000",
+                    // border : "0px"
+                  },
+                }}
+                type="submit"
+              >
+                Know More
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Box>

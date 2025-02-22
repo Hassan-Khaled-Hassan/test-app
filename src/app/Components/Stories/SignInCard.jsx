@@ -72,25 +72,27 @@ export default function SignInCard() {
         competitive costs.
       </Typography>
       <Box sx={{ display: "flex", justifyContent: {xs:"center",sm:"start"} }}>
-        <Button
-          sx={{
-            borderRadius: "16px",
-            p: ["10px 22px", "15px 30px"],
-            background: "#F1E8D8",
-            color: "#000000",
-            width: "195px",
-            fontWeight: "bold",
-            transition: "all 0.6s",
-            ":hover": {
+        <Link href="/Stories">
+          <Button
+            sx={{
+              borderRadius: "16px",
+              p: ["10px 22px", "15px 30px"],
               background: "#F1E8D8",
               color: "#000000",
-              // border : "0px"
-            },
-          }}
-          type="submit"
-        >
-          Read More
-        </Button>
+              width: "195px",
+              fontWeight: "bold",
+              transition: "all 0.6s",
+              ":hover": {
+                background: "#F1E8D8",
+                color: "#000000",
+                // border : "0px"
+              },
+            }}
+            type="submit"
+          >
+            Read More
+          </Button>
+        </Link>
       </Box>
     </Card>
   );
