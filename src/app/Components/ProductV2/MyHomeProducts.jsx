@@ -4,21 +4,15 @@ import Box from "@mui/material/Box";
 import "./restDetails.css";
 import MyHomeCategoryContain from './MyHomeCategoryContain';
 import axios from "axios";
-import { getCookie, getCookies, hasCookie } from 'cookies-next/server';
-import { cookies } from 'next/headers';
+import { unstable_noStore as noStore } from "next/cache";
 const MyHomeProducts = async () => {
- const response = await axios.get(
+ noStore(); // Ensures data is always fresh
+ const data = await fetch(
    `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Category/Categories`,
-   {
-     headers: {
-       "Cache-Control": "no-cache, no-store, must-revalidate",
-       Pragma: "no-cache",
-       Expires: "0",
-     },
-   }
+   { cache: "no-store" }
  );
-
-  // console.log(response.data.data)
+const response = await data.json();
+  console.log(response)
   return (
     <Box
       sx={{
@@ -30,8 +24,8 @@ const MyHomeProducts = async () => {
         borderRadius: "0px",
       }}
     >
-      {response?.data?.data?.length > 0 ? (
-        <MyHomeCategoryContain response = {response.data.data}/>
+      {response?.data?.length > 0 ? (
+        <MyHomeCategoryContain response = {response.data}/>
       ) : null}
     </Box>
   );

@@ -30,7 +30,7 @@ const MyCard = ({item}) => {
         border: "4px solid #4C6444",
         m: "auto",
         cursor: "pointer",
-        height : "570px",
+        height : "620px",
       }}
     >
       <CardActionArea
