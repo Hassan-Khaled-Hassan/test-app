@@ -7,9 +7,17 @@ import axios from "axios";
 import { getCookie, getCookies, hasCookie } from 'cookies-next/server';
 import { cookies } from 'next/headers';
 const MyHomeProducts = async () => {
-  const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Category/Categories`
-  );
+ const response = await axios.get(
+   `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Category/Categories`,
+   {
+     headers: {
+       "Cache-Control": "no-cache, no-store, must-revalidate",
+       Pragma: "no-cache",
+       Expires: "0",
+     },
+   }
+ );
+
   // console.log(response.data.data)
   return (
     <Box

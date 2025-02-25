@@ -133,7 +133,7 @@ export default function MyFooter() {
                 >
                   <EmailIcon sx={{ color: "#F1E8D8" }} />
                 </IconButton>
-                mohamed.saleh@siwagarden.com <br/> mohamed.saleh@siwagarden.com
+                Info@siwagarden.com <br/> marketing@siwagarden.com
               </Box>
               <Box
                 variant="body2"
