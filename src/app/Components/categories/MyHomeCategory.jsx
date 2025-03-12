@@ -5,10 +5,12 @@ import "./restDetails.css";
 import axios from "axios";
 import MyHomeCategoryContain from './MyHomeCategoryContain';
 const MyHomeCategory = async () => {
-    const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Blog/Blogs`
-  );
+      const data = await fetch(
+        `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Blog/Blogs`,
+        { cache: "no-store" }
+      );
   // console.log(response.data);
+  const response = await data.json();
   return (
     <Box
       sx={{
@@ -20,7 +22,7 @@ const MyHomeCategory = async () => {
         borderRadius: "0px",
       }}
     >
-      <MyHomeCategoryContain response={response.data.data} />
+      <MyHomeCategoryContain response={response.data} />
     </Box>
   );
 }

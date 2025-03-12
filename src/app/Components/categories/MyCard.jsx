@@ -1,8 +1,9 @@
 import { Box, Paper, Typography } from "@mui/material";
 import React from "react";
-
+import Link from "next/link";
 const MyCard = ({ item }) => {
   return (
+  <Link href={`/Blogs/BlogDetails/${item.id}`}>
     <Paper
       component="div"
       sx={{
@@ -61,6 +62,7 @@ const MyCard = ({ item }) => {
         </Typography>
       </Box>
     </Paper>
+    </Link>
   );
 };
 

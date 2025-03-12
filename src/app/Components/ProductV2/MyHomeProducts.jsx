@@ -12,7 +12,7 @@ const MyHomeProducts = async () => {
    { cache: "no-store" }
  );
 const response = await data.json();
-  console.log(response)
+  // console.log(response)
   return (
     <Box
       sx={{

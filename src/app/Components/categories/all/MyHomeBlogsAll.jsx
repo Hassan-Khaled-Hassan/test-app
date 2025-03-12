@@ -6,10 +6,12 @@ import AllProducts from './AllProducts';
 import axios from "axios";
 
 const MyHomeBlogsAll = async() => {
-  const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Blog/Blogs`
+  const data = await fetch(
+    `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Blog/Blogs`,
+    { cache: "no-store" }
   );
   // console.log(response.data.data);
+  const response = await data.json();
   return (
     <Box
       sx={{
@@ -20,7 +22,7 @@ const MyHomeBlogsAll = async() => {
         // borderRadius: "40px",
       }}
     >
-      <AllProducts  response={response.data.data}/>
+      <AllProducts  response={response.data}/>
     </Box>
   );
 }

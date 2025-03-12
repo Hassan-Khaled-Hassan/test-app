@@ -6,10 +6,12 @@ import LogoCollection from "./AllQuestions";
 import axios from "axios";
 
 const MyHomeCertificate = async (async) => {
-  const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Certification/Certifications`
+  const data = await fetch(
+    `${process.env.NEXT_PUBLIC_Backend_URL}api/v1/Certification/Certifications`,
+    { cache: "no-store" }
   );
   // display data
+  const response = await data.json();
   return (
     <Box
       sx={{
@@ -20,7 +22,7 @@ const MyHomeCertificate = async (async) => {
         // borderRadius: "40px",
       }}
     >
-      <LogoCollection part1="Quality" name= " & Compliance Certifications" response={response.data.data}/>
+      <LogoCollection part1="Quality" name= " & Compliance Certifications" response={response.data}/>
     </Box>
   );
 }
